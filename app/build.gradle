@@ -12,7 +12,7 @@ def versionMinor = 1
 def versionPatch = 0
 
 def packageName = "id.co.iconpln.smartcity"
-def appName = "Kotlin Boilerplate"
+def appName = "Smart City"
 
 android {
     compileSdkVersion 28
