@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_primary"
+        tools:context="id.co.iconpln.smartcity.ui.dashboard.DashboardActivity">
+
+    <include layout="@layout/layout_toolbar_white"/>
+
+    <Spinner
+    android:id="@+id/spinner"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_spinner"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="12dp"
+    android:layout_below="@id/toolbar"
+    android:entries="@array/daftar_tahun">
+    </Spinner>
+
+    <HorizontalScrollView
+    android:id="@+id/slide"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/spinner"
+    android:orientation="horizontal">
+
+    //linear on scrollview
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_summary"/>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_summary"/>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_summary"/>
+
+    </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+    android:id="@+id/graph"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/slide"
+    android:layout_marginTop="12dp"
+    android:background="@drawable/bg_graph">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="86dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:text="Jumlah Pengaduan"
+                android:textColor="#42A5F5"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        <TextView
+                android:layout_width="86dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="12dp"
+                android:gravity="center"
+                android:text="Penyerapan Anggaran APBD"
+                android:textSize="12sp" />
+
+        <TextView
+                android:layout_width="86dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:text="Pendapatan Pajak"
+                android:textSize="12sp" />
+
+        <TextView
+                android:layout_width="86dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="Data Kesehatan"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
