@@ -12,4 +12,13 @@
     <string name="label_password">Password</string>
     <string name="label_forgot_password">Forgot password?</string>
 
+    <string-array name="daftar_tahun">
+        <item>2019</item>
+        <item>2018</item>
+        <item>2017</item>
+        <item>2016</item>
+        <item>2015</item>
+        <item>2014</item>
+    </string-array>
+
 </resources>

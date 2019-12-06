@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_dashboard_active"
+        android:title="Dashboard"
+        app:showAsAction="ifRoom" />
+
+<item
+        android:id="@+id/nav_public_service"
+        android:icon="@drawable/ic_public_service_inactive"
+        android:title="Public Service"
+        app:showAsAction="ifRoom" />
+
+<item
+        android:id="@+id/nav_ekonomi"
+        android:icon="@drawable/ic_economy_inactive"
+        android:title="Ekonomi"
+        app:showAsAction="ifRoom" />
+
+<item
+        android:id="@+id/nav_account"
+        android:icon="@drawable/ic_akun_inactive"
+        android:title="Account"
+        app:showAsAction="ifRoom" />
+
+</menu>
