@@ -10,9 +10,8 @@
 
     <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView">
 
     <RelativeLayout
             android:layout_width="match_parent"
@@ -57,7 +56,7 @@
                 <!--PENGADUAN-->
                 <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="250dp"
+                        android:layout_height="350dp"
                         android:background="@drawable/bg_summary"
                         android:layout_marginTop="@dimen/space_x1_half"
                         android:orientation="vertical">
@@ -130,7 +129,7 @@
                 <!--PERIJINAN-->
                 <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="250dp"
+                        android:layout_height="350dp"
                         android:background="@drawable/bg_summary"
                         android:layout_marginTop="@dimen/space_x1_half"
                         android:orientation="vertical">
@@ -143,7 +142,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:text="Data Perijinan"
-                                android:textColor="@color/grey"
+                                android:textColor="@color/colorPrimary"
                                 android:textSize="@dimen/text_12"
                                 android:fontFamily="@font/roboto"
                                 android:gravity="center"/>
@@ -161,7 +160,7 @@
                 <!--DEMOGRAPI-->
                 <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="250dp"
+                        android:layout_height="350dp"
                         android:background="@drawable/bg_summary"
                         android:layout_marginTop="@dimen/space_x1_half"
                         android:orientation="vertical">
@@ -175,7 +174,7 @@
                                 android:layout_height="50dp"
                                 android:text="Data Demograpi"
                                 android:textSize="@dimen/text_12"
-                                android:textColor="@color/grey"
+                                android:textColor="@color/colorPrimary"
                                 android:fontFamily="@font/roboto"
                                 android:gravity="center"/>
 
@@ -184,7 +183,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_above="@+id/txt_year">
-                        <com.github.mikephil.charting.charts.BarChart
+                        <com.github.mikephil.charting.charts.HorizontalBarChart
                                 android:id="@+id/graph_demograpi"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"/>

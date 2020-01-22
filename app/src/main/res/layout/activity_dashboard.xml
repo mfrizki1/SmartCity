@@ -12,6 +12,7 @@
             android:id="@+id/fl_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@+id/Bottom_menu"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -24,6 +25,7 @@
             app:itemIconTint="@drawable/selector_nav_item_color"
             app:itemTextColor="@drawable/selector_nav_item_color"
             app:itemIconSize="@dimen/space_x3"
-            app:labelVisibilityMode="labeled"/>
+            app:labelVisibilityMode="labeled"
+            app:layout_behavior="id.co.iconpln.smartcity.widget.BottomNavigationBehavior"/>
 
 </RelativeLayout>

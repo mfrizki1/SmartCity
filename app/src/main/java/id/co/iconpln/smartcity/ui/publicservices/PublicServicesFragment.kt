@@ -8,36 +8,34 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.charts.BarChart
-import com.github.mikephil.charting.components.Legend
-import com.github.mikephil.charting.components.LegendEntry
-import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.BarData
-import com.github.mikephil.charting.data.BarDataSet
-import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.data.Entry
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
-import com.github.mikephil.charting.formatter.LargeValueFormatter
-import com.github.mikephil.charting.highlight.Highlight
+import com.github.mikephil.charting.components.*
+import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
+import com.github.mikephil.charting.utils.Highlight
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import id.co.iconpln.smartcity.R
 import id.co.iconpln.smartcity.ui.publicservices.pengaduan.datapengaduanFragment
 import id.co.iconpln.smartcity.ui.publicservices.jenispengaduan.jenispengaduanFragment
+import kotlinx.android.synthetic.main.fragment_jenispengaduan.*
 import kotlinx.android.synthetic.main.fragment_publicservices.*
 
-class PublicServicesFragment : Fragment(), OnChartValueSelectedListener, View.OnClickListener {
+class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
 
-    private lateinit var barChartView: BarChart
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) =
         inflater.inflate(R.layout.fragment_publicservices, container, false)
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        txt_perijinan.setOnClickListener(this)
-        txt_demograpi.setOnClickListener(this)
 
-//        graphPengaduan()
         setupTab()
+
+        val dataPerijinan = BarData(xAxisValuePerijinan(), dataSetsPerijinan())
+        graphPerijinan(dataPerijinan)
+
+        val dataDemograpi = BarData(xAxisValueDemograpi(), dataSetsDemograpi())
+        graphDemograpi(dataDemograpi)
+
 
 
     }
@@ -48,63 +46,211 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener, View.On
         tabpengaduan.setupWithViewPager(viewpagerPengaduan)
     }
 
-    override fun onClick(v: View?){
-        val item_id = v?.id
-        when(item_id){
-           /* R.id.txt_graph_pengaduan->{
-                txt_graph_pengaduan.setTextColor(resources.getColor(R.color.colorPrimary))
-                txt_jenis_pengaduan.setTextColor(resources.getColor(R.color.grey))
-                txt_perijinan.setTextColor(resources.getColor(R.color.grey))
-                txt_demograpi.setTextColor(resources.getColor(R.color.grey))
+    private fun graphPerijinan(data: BarData){
+        graph_perijinan.data= data
+        graph_perijinan.setDescription("")
+        graph_perijinan.animateXY(500, 500)
+        graph_perijinan.invalidate()
 
-                txt_graph_pengaduan.setTypeface(null, Typeface.BOLD)
-                txt_jenis_pengaduan.setTypeface(null, Typeface.NORMAL)
-                txt_perijinan.setTypeface(null, Typeface.NORMAL)
-                txt_demograpi.setTypeface(null, Typeface.NORMAL)
-                graphPengaduan()
+        graph_perijinan.xAxis.position = XAxis.XAxisPosition.BOTTOM
+        graph_perijinan.xAxis.textSize = 9f
+        graph_perijinan.xAxis.typeface = Typeface.DEFAULT
+        graph_perijinan.xAxis.setDrawGridLines(false)
+        graph_perijinan.setDrawGridBackground(false)
+        graph_perijinan.setDrawBarShadow(false)
+        graph_perijinan.isHighlightEnabled = false
 
-            }
-            R.id.txt_jenis_pengaduan->{
-                txt_jenis_pengaduan.setTextColor(resources.getColor(R.color.colorPrimary))
-                txt_graph_pengaduan.setTextColor(resources.getColor(R.color.grey))
-                txt_perijinan.setTextColor(resources.getColor(R.color.grey))
-                txt_demograpi.setTextColor(resources.getColor(R.color.grey))
+        graph_perijinan.legend.isEnabled = false
 
-                txt_jenis_pengaduan.setTypeface(null, Typeface.BOLD)
-                txt_graph_pengaduan.setTypeface(null, Typeface.NORMAL)
-                txt_perijinan.setTypeface(null, Typeface.NORMAL)
-                txt_demograpi.setTypeface(null, Typeface.NORMAL)
-                piePengaduan()
-            }*/
-            R.id.txt_perijinan->{
-                txt_perijinan.setTextColor(resources.getColor(R.color.colorPrimary))
-               /* txt_jenis_pengaduan.setTextColor(resources.getColor(R.color.grey))
-                txt_graph_pengaduan.setTextColor(resources.getColor(R.color.grey))*/
-                txt_demograpi.setTextColor(resources.getColor(R.color.grey))
+        graph_perijinan.axisRight.isEnabled = false
+    }
+    private fun dataSetsPerijinan():ArrayList<BarDataSet>{
+        val bar1 = ArrayList<BarEntry>()
+        bar1.add(BarEntry(10f, 0))
+        bar1.add(BarEntry(8f,1))
+        bar1.add(BarEntry(45f, 2))
+        bar1.add(BarEntry(15f, 3))
+        bar1.add(BarEntry(25f, 4))
+        bar1.add(BarEntry(75f, 5))
+        bar1.add(BarEntry(110f, 6))
+        bar1.add(BarEntry(21f, 7))
+        bar1.add(BarEntry(24f, 8))
+        bar1.add(BarEntry(30f, 9))
+        bar1.add(BarEntry(11f, 10))
+        bar1.add(BarEntry(14f, 11))
+
+        val barDataSet1 = BarDataSet(bar1, "")
+        barDataSet1.setColor(Color.rgb(0, 155, 50))
+        barDataSet1.valueTextSize = 6f
 
 
-                txt_perijinan.setTypeface(null, Typeface.BOLD)
-                /*txt_jenis_pengaduan.setTypeface(null, Typeface.NORMAL)
-                txt_graph_pengaduan.setTypeface(null, Typeface.NORMAL)*/
-                txt_demograpi.setTypeface(null, Typeface.NORMAL)
-            }
-            R.id.txt_demograpi->{
-                txt_demograpi.setTextColor(resources.getColor(R.color.colorPrimary))
-                /*txt_graph_pengaduan.setTextColor(resources.getColor(R.color.grey))
-                txt_jenis_pengaduan.setTextColor(resources.getColor(R.color.grey))*/
-                txt_perijinan.setTextColor(resources.getColor(R.color.grey))
+        val dataSets = ArrayList<BarDataSet>()
+        dataSets.add(barDataSet1)
 
-                txt_demograpi.setTypeface(null, Typeface.BOLD)
-                /*txt_graph_pengaduan.setTypeface(null, Typeface.NORMAL)
-                txt_jenis_pengaduan.setTypeface(null, Typeface.NORMAL)*/
-                txt_perijinan.setTypeface(null, Typeface.NORMAL)
-            }
-        }
+        return  dataSets
+    }
+    private fun xAxisValuePerijinan(): ArrayList<String>{
+        val xaxis = ArrayList<String>()
+        xaxis.add("JAN")
+        xaxis.add("FEB")
+        xaxis.add("MAR")
+        xaxis.add("APR")
+        xaxis.add("MAY")
+        xaxis.add("JUN")
+        xaxis.add("JUL")
+        xaxis.add("AGS")
+        xaxis.add("SEP")
+        xaxis.add("OKT")
+        xaxis.add("NOV")
+        xaxis.add("DES")
+
+        return xaxis
+    }
+
+    private fun graphDemograpi(data: BarData){
+        graph_demograpi.data = data
+        graph_demograpi.setDescription("")
+        graph_demograpi.animateXY(500, 500)
+        graph_demograpi.invalidate()
+
+        graph_demograpi.xAxis.position = XAxis.XAxisPosition.BOTTOM
+        graph_demograpi.xAxis.textSize = 9f
+        graph_demograpi.xAxis.typeface = Typeface.DEFAULT
+        graph_demograpi.xAxis.setDrawGridLines(false)
+        graph_demograpi.setDrawGridBackground(false)
+        graph_demograpi.setDrawBarShadow(false)
+        graph_demograpi.isHighlightEnabled = false
+
+        val l = graph_demograpi.legend
+        l.form = Legend.LegendForm.CIRCLE
+        l.position = Legend.LegendPosition.BELOW_CHART_CENTER
+
+        graph_demograpi.axisRight.isEnabled = false
 
     }
 
+    private fun dataSetsDemograpi(): ArrayList<BarDataSet>{
+        val barLaki = ArrayList<BarEntry>()
+        barLaki.add(BarEntry(10f, 0))
+        barLaki.add(BarEntry(8f,1))
+        barLaki.add(BarEntry(45f, 2))
+        barLaki.add(BarEntry(15f, 3))
+        barLaki.add(BarEntry(25f, 4))
+
+        val barCewe = ArrayList<BarEntry>()
+        barCewe.add(BarEntry(14f, 0))
+        barCewe.add(BarEntry(11f, 1))
+        barCewe.add(BarEntry(30f, 2))
+        barCewe.add(BarEntry(24f, 3))
+        barCewe.add(BarEntry(21f, 4))
+
+        val barDataSetCowo = BarDataSet(barLaki, "Laki-Laki")
+        barDataSetCowo.setColor(Color.rgb(51, 153, 255))
+        barDataSetCowo.valueTextSize = 6f
+
+        val barDataSetCewe = BarDataSet(barCewe, "Perempuan")
+        barDataSetCewe.setColor(Color.rgb(255, 51, 51))
+        barDataSetCewe.valueTextSize = 6f
+
+        val dataSets = ArrayList<BarDataSet>()
+        dataSets.add(barDataSetCewe)
+        dataSets.add(barDataSetCowo)
+
+        return  dataSets
+    }
+
+    private fun xAxisValueDemograpi(): ArrayList<String>{
+        val xaxis = ArrayList<String>()
+        xaxis.add("5-11")
+        xaxis.add("11-17")
+        xaxis.add("18-22")
+        xaxis.add("23-30")
+        xaxis.add("31-40")
+
+        return xaxis
+    }
+
+    /*private fun graphDemo(){
+
+        val barWidth = 0.25f
+        val groupSpace = 0.08f
+        val barSpace = 0.02f
+        val awal = 5-13f
+
+        val xAxisValue = ArrayList<String>()
+        xAxisValue.add("5-13")
+        xAxisValue.add("14-17")
+        xAxisValue.add("18-21")
+        xAxisValue.add("22-30")
+        xAxisValue.add("31-40")
+
+        val laki = ArrayList<BarEntry>()
+        laki.add(BarEntry(1f, 18f))
+        laki.add(BarEntry(2f, 20f))
+        laki.add(BarEntry(3f, 25f))
+        laki.add(BarEntry(4f, 10f))
+        laki.add(BarEntry(5f, 11f))
+
+        val perempuan = ArrayList<BarEntry>()
+        perempuan.add(BarEntry(1f, 11f))
+        perempuan.add(BarEntry(2f, 10f))
+        perempuan.add(BarEntry(3f, 15f))
+        perempuan.add(BarEntry(4f, 8f))
+        perempuan.add(BarEntry(5f, 22f))
+
+        val dataSetCowo = BarDataSet(laki, "Laki-Laki")
+        dataSetCowo.setColor(Color.BLUE)
+        dataSetCowo.valueTextSize = 5f
+
+
+        val dataSetCewe = BarDataSet(perempuan, "Perempuan")
+        dataSetCewe.setColor(Color.MAGENTA)
+        dataSetCewe.valueTextSize = 5f
+
+        val data = BarData(dataSetCowo, dataSetCewe)
+
+        graph_demograpi.data = data
+        graph_demograpi.description.isEnabled = false
+        graph_demograpi.barData.barWidth = barWidth
+        graph_demograpi.xAxis.axisMinimum = 0f
+
+
+        val l = graph_demograpi.legend
+        l.verticalAlignment = Legend.LegendVerticalAlignment.TOP
+        l.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
+        l.orientation = Legend.LegendOrientation.HORIZONTAL
+        l.setDrawInside(false)
+        l.form = Legend.LegendForm.CIRCLE
+
+        val xAxis = graph_demograpi.getXAxis()
+        xAxis.setGranularity(1f)
+        xAxis.setGranularityEnabled(true)
+        xAxis.setCenterAxisLabels(true)
+        xAxis.setDrawGridLines(true)
+        xAxis.textSize = 6.5f
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM)
+        xAxis.setValueFormatter(IndexAxisValueFormatter(xAxisValue))
+        graph_demograpi.invalidate()
+
+
+    }*/
+
+
+    override fun onNothingSelected() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onValueSelected(e: Entry?, dataSetIndex: Int, h: Highlight?) {
+
+    }
+
+
+    }
+
+
+
 /*    private fun chartPengaduan(){
-        barChartView = view!!.findViewById(R.id.graph_pengaduan)
+        piePengaduan = view!!.findViewById(R.id.graph_pengaduan)
 
         val barentry = ArrayList<String>()
     }
@@ -112,9 +258,9 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener, View.On
     private fun graphPengaduan() {
         barChartView = view!!.findViewById(R.id.graph_pengaduan)
 
-        val barWidth: Float
-        val barSpace: Float
-        val groupSpace: Float
+        val barWidth: Float = 0.18f
+        val barSpace: Float = 0.07f
+        val groupSpace: Float = 0.25f
         val groupCount = 12
 
         barWidth = 0.18f //gemuk/ kurusnya bar
@@ -470,10 +616,3 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener, View.On
         barChartView.setVisibleXRange(1f, 12f)
     }*/
 
-    override fun onValueSelected(e: Entry?, h: Highlight?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-    override fun onNothingSelected() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-}
