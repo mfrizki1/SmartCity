@@ -56,143 +56,94 @@
             <!--APBD-->
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="350dp"
                     android:background="@drawable/bg_summary"
                     android:layout_marginTop="@dimen/space_x1_half"
                     android:orientation="vertical">
-                <LinearLayout
+                <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabApbd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-                    <TextView
-                            android:id="@+id/txt_graph_apbd"
-                            android:layout_width="125dp"
-                            android:layout_height="50dp"
-                            android:text="Data Penyerapan Anggaran APBD"
-                            android:fontFamily="@font/roboto"
-                            android:textColor="@color/colorPrimary"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/text_12"
-                            android:gravity="center"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:layout_marginHorizontal="32dp"/>
-                    <TextView
-                            android:id="@+id/txt_total_apbd"
-                            android:layout_width="125dp"
-                            android:layout_height="50dp"
-                            android:text="Total Anggaran Belanja APBD"
-                            android:textSize="@dimen/text_12"
-                            android:textColor="@color/grey"
-                            android:fontFamily="@font/roboto"
-                            android:gravity="center"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:layout_marginHorizontal="32dp"/>
-                </LinearLayout>
-                <LinearLayout
+                        android:minHeight="?actionBarSize"
+                        app:tabTextAppearance="@style/tab_text"
+                        app:tabSelectedTextColor="@color/colorPrimary"
+                        app:tabGravity="fill"
+                        app:tabIndicatorColor="@color/colorPrimary"
+                        app:tabIndicatorHeight="2dp"
+                        app:tabIndicatorGravity="bottom"
+                        app:tabMode="fixed">
+
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <id.co.iconpln.smartcity.widget.SwipeLockableViewPager
+                        android:id="@+id/viewpagerApbd"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                    <com.github.mikephil.charting.charts.BarChart
-                            android:id="@+id/graph_apbd"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
-                </LinearLayout>
+
+                </id.co.iconpln.smartcity.widget.SwipeLockableViewPager>
             </LinearLayout>
 
             <!--Pendapatan Desa-->
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="350dp"
                     android:background="@drawable/bg_summary"
                     android:layout_marginTop="@dimen/space_x1_half"
                     android:orientation="vertical">
-                <LinearLayout
+                <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabPendapatanDesa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-                    <TextView
-                            android:id="@+id/txt_graph_pendapatan_desa"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:text="Data Pendapatan Desa"
-                            android:fontFamily="@font/roboto"
-                            android:textColor="@color/grey"
-                            android:textSize="@dimen/text_12"
-                            android:gravity="center"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:layout_marginHorizontal="32dp"/>
-                    <TextView
-                            android:id="@+id/txt_total_pendapatan_desa"
-                            android:layout_width="125dp"
-                            android:layout_height="50dp"
-                            android:text="Total Pendapatan Desa"
-                            android:textSize="@dimen/text_12"
-                            android:textColor="@color/grey"
-                            android:fontFamily="@font/roboto"
-                            android:gravity="center"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:layout_marginHorizontal="32dp"/>
-                </LinearLayout>
-                <LinearLayout
+                        android:minHeight="?actionBarSize"
+                        app:tabTextAppearance="@style/tab_text"
+                        app:tabSelectedTextColor="@color/colorPrimary"
+                        app:tabGravity="fill"
+                        app:tabIndicatorColor="@color/colorPrimary"
+                        app:tabIndicatorHeight="2dp"
+                        app:tabIndicatorGravity="bottom"
+                        app:tabMode="fixed">
+
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <id.co.iconpln.smartcity.widget.SwipeLockableViewPager
+                        android:id="@+id/viewpagerPendapatanDesa"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                    <com.github.mikephil.charting.charts.BarChart
-                            android:id="@+id/graph_pendapatan_desa"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
-                </LinearLayout>
+
+                </id.co.iconpln.smartcity.widget.SwipeLockableViewPager>
             </LinearLayout>
 
             <!--Pembiayaan Desa-->
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="350dp"
                     android:background="@drawable/bg_summary"
                     android:layout_marginTop="@dimen/space_x1_half"
                     android:orientation="vertical">
-                <LinearLayout
+                <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabPembiayaanDesa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-                    <TextView
-                            android:id="@+id/txt_graph_pembiayaan_desa"
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:text="Data Pembiayaan Desa"
-                            android:fontFamily="@font/roboto"
-                            android:textColor="@color/grey"
-                            android:textSize="@dimen/text_12"
-                            android:gravity="center"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:layout_marginHorizontal="32dp"/>
-                    <TextView
-                            android:id="@+id/txt_total_pembiayaan_desa"
-                            android:layout_width="125dp"
-                            android:layout_height="50dp"
-                            android:text="Total Pembiayaan Desa"
-                            android:textSize="@dimen/text_12"
-                            android:textColor="@color/grey"
-                            android:fontFamily="@font/roboto"
-                            android:gravity="center"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:layout_marginHorizontal="32dp"/>
-                </LinearLayout>
-                <LinearLayout
+                        android:minHeight="?actionBarSize"
+                        app:tabTextAppearance="@style/tab_text"
+                        app:tabSelectedTextColor="@color/colorPrimary"
+                        app:tabGravity="fill"
+                        app:tabIndicatorColor="@color/colorPrimary"
+                        app:tabIndicatorHeight="2dp"
+                        app:tabIndicatorGravity="bottom"
+                        app:tabMode="fixed">
+
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <id.co.iconpln.smartcity.widget.SwipeLockableViewPager
+                        android:id="@+id/viewpagerPembiayaanDesa"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                    <com.github.mikephil.charting.charts.BarChart
-                            android:id="@+id/graph_pembiayaan_desa"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
-                </LinearLayout>
+
+                </id.co.iconpln.smartcity.widget.SwipeLockableViewPager>
             </LinearLayout>
         </LinearLayout>
 

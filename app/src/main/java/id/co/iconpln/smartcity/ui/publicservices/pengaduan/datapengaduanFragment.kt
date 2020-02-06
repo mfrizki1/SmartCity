@@ -105,15 +105,15 @@ class datapengaduanFragment : Fragment(), OnChartValueSelectedListener {
 
         val barDataSet1 = BarDataSet(selesai, "Selesai")
         barDataSet1.setColor(Color.rgb(0, 155, 0))
-        barDataSet1.valueTextSize = 6f
+        barDataSet1.valueTextSize = 7f
 
         val barDataSet2 = BarDataSet(proses, "Dproses")
         barDataSet2.setColor(Color.rgb(0, 0, 155))
-        barDataSet2.valueTextSize = 6f
+        barDataSet2.valueTextSize = 7f
 
         val barDataSet3 = BarDataSet(belum, "Belum Selesai")
         barDataSet3.setColor(Color.rgb(155, 0, 0))
-        barDataSet3.valueTextSize = 6f
+        barDataSet3.valueTextSize = 7f
 
         val dataSets = ArrayList<BarDataSet>()
         dataSets.add(barDataSet1)

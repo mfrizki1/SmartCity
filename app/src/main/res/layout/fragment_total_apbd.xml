@@ -1,0 +1,11 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="id.co.iconpln.smartcity.ui.ekonomi.apbd.TotalApbdFragment">
+
+    <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieTotalApbd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+</FrameLayout>

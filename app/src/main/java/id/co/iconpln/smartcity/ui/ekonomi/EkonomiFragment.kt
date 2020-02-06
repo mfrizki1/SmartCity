@@ -6,125 +6,66 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import id.co.iconpln.smartcity.R
+import id.co.iconpln.smartcity.util.ViewPagerAdapter
+import id.co.iconpln.smartcity.ui.ekonomi.apbd.DataApbdFragment
+import id.co.iconpln.smartcity.ui.ekonomi.apbd.TotalApbdFragment
+import id.co.iconpln.smartcity.ui.ekonomi.pendapatandesa.DataPendapatanDesaFragment
+import id.co.iconpln.smartcity.ui.ekonomi.pendapatandesa.TotalPendapatanDesaFragment
+import id.co.iconpln.smartcity.ui.ekonomi.pembiayaandesa.DataPembiayaanDesaFragment
+import id.co.iconpln.smartcity.ui.ekonomi.pembiayaandesa.TotalPembiayaanDesaFragment
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener
+import com.github.mikephil.charting.utils.Highlight
 import kotlinx.android.synthetic.main.fragment_ekonomi.*
 
-class EkonomiFragment : Fragment(), View.OnClickListener{
+class EkonomiFragment : Fragment(), OnChartValueSelectedListener{
+
 
     override fun onCreateView(
         inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?)= inflater.inflate(R.layout.fragment_ekonomi, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        txt_graph_apbd.setOnClickListener(this)
-        txt_total_apbd.setOnClickListener(this)
-        txt_graph_pendapatan_desa.setOnClickListener(this)
-        txt_total_pendapatan_desa.setOnClickListener(this)
-        txt_graph_pembiayaan_desa.setOnClickListener(this)
-        txt_total_pembiayaan_desa.setOnClickListener(this)
+
+        setupTabApbd(viewpagerApbd)
+        setupTabPendapatanDesa(viewpagerPendapatanDesa)
+        setupTabPembiayaanDesa(viewpagerPembiayaanDesa)
 
     }
 
-    override fun onClick(v: View?) {
-        val item_id = v?.id
-        when(item_id){
-            R.id.txt_graph_apbd->{
-                txt_graph_apbd.setTextColor(resources.getColor(R.color.colorPrimary))
-                txt_total_apbd.setTextColor(resources.getColor(R.color.grey))
-                txt_graph_pendapatan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_total_pendapatan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_graph_pembiayaan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_total_pembiayaan_desa.setTextColor(resources.getColor(R.color.grey))
 
-                txt_graph_apbd.setTypeface(null, Typeface.BOLD)
-                txt_total_apbd.setTypeface(null, Typeface.NORMAL)
-                txt_graph_pendapatan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_total_pendapatan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_graph_pembiayaan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_total_pembiayaan_desa.setTypeface(null, Typeface.NORMAL)
-            }
-
-            R.id.txt_total_apbd->{
-                txt_graph_apbd.setTextColor(resources.getColor(R.color.grey))
-                txt_total_apbd.setTextColor(resources.getColor(R.color.colorPrimary))
-                txt_graph_pendapatan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_total_pendapatan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_graph_pembiayaan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_total_pembiayaan_desa.setTextColor(resources.getColor(R.color.grey))
-
-                txt_graph_apbd.setTypeface(null, Typeface.NORMAL)
-                txt_total_apbd.setTypeface(null, Typeface.BOLD)
-                txt_graph_pendapatan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_total_pendapatan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_graph_pembiayaan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_total_pembiayaan_desa.setTypeface(null, Typeface.NORMAL)
-            }
-
-            R.id.txt_graph_pendapatan_desa->{
-                txt_graph_apbd.setTextColor(resources.getColor(R.color.grey))
-                txt_total_apbd.setTextColor(resources.getColor(R.color.grey))
-                txt_graph_pendapatan_desa.setTextColor(resources.getColor(R.color.colorPrimary))
-                txt_total_pendapatan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_graph_pembiayaan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_total_pembiayaan_desa.setTextColor(resources.getColor(R.color.grey))
-
-                txt_graph_apbd.setTypeface(null, Typeface.NORMAL)
-                txt_total_apbd.setTypeface(null, Typeface.NORMAL)
-                txt_graph_pendapatan_desa.setTypeface(null, Typeface.BOLD)
-                txt_total_pendapatan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_graph_pembiayaan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_total_pembiayaan_desa.setTypeface(null, Typeface.NORMAL)
-            }
-
-            R.id.txt_total_pendapatan_desa->{
-                txt_graph_apbd.setTextColor(resources.getColor(R.color.grey))
-                txt_total_apbd.setTextColor(resources.getColor(R.color.grey))
-                txt_graph_pendapatan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_total_pendapatan_desa.setTextColor(resources.getColor(R.color.colorPrimary))
-                txt_graph_pembiayaan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_total_pembiayaan_desa.setTextColor(resources.getColor(R.color.grey))
-
-                txt_graph_apbd.setTypeface(null, Typeface.NORMAL)
-                txt_total_apbd.setTypeface(null, Typeface.NORMAL)
-                txt_graph_pendapatan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_total_pendapatan_desa.setTypeface(null, Typeface.BOLD)
-                txt_graph_pembiayaan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_total_pembiayaan_desa.setTypeface(null, Typeface.NORMAL)
-            }
-
-            R.id.txt_graph_pembiayaan_desa->{
-                txt_graph_apbd.setTextColor(resources.getColor(R.color.grey))
-                txt_total_apbd.setTextColor(resources.getColor(R.color.grey))
-                txt_graph_pendapatan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_total_pendapatan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_graph_pembiayaan_desa.setTextColor(resources.getColor(R.color.colorPrimary))
-                txt_total_pembiayaan_desa.setTextColor(resources.getColor(R.color.grey))
-
-                txt_graph_apbd.setTypeface(null, Typeface.NORMAL)
-                txt_total_apbd.setTypeface(null, Typeface.NORMAL)
-                txt_graph_pendapatan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_total_pendapatan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_graph_pembiayaan_desa.setTypeface(null, Typeface.BOLD)
-                txt_total_pembiayaan_desa.setTypeface(null, Typeface.NORMAL)
-            }
-
-            R.id.txt_total_pembiayaan_desa->{
-                txt_graph_apbd.setTextColor(resources.getColor(R.color.grey))
-                txt_total_apbd.setTextColor(resources.getColor(R.color.grey))
-                txt_graph_pendapatan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_total_pendapatan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_graph_pembiayaan_desa.setTextColor(resources.getColor(R.color.grey))
-                txt_total_pembiayaan_desa.setTextColor(resources.getColor(R.color.colorPrimary))
-
-                txt_graph_apbd.setTypeface(null, Typeface.NORMAL)
-                txt_total_apbd.setTypeface(null, Typeface.NORMAL)
-                txt_graph_pendapatan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_total_pendapatan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_graph_pembiayaan_desa.setTypeface(null, Typeface.NORMAL)
-                txt_total_pembiayaan_desa.setTypeface(null, Typeface.BOLD)
-            }
-        }
+    private fun setupTabApbd(viewPager: ViewPager) {
+        val adapter = ViewPagerAdapter(childFragmentManager)
+        adapter.populateFragment(DataApbdFragment(), "Data Apbd")
+        adapter.populateFragment(TotalApbdFragment(), "Total Belanja Desa")
+        viewPager.adapter = adapter
+        tabApbd.setupWithViewPager(viewPager)
+    }
+    private fun setupTabPendapatanDesa(viewPager: ViewPager) {
+        val adapter = ViewPagerAdapter(childFragmentManager)
+        adapter.populateFragment(DataPendapatanDesaFragment(), "Data Pendapatan Desa")
+        adapter.populateFragment(TotalPendapatanDesaFragment(), "Total Pendapatan Desa")
+        viewPager.adapter = adapter
+        tabPendapatanDesa.setupWithViewPager(viewPager)
+    }
+    private fun setupTabPembiayaanDesa(viewPager: ViewPager) {
+        val adapter = ViewPagerAdapter(childFragmentManager)
+        adapter.populateFragment(DataPembiayaanDesaFragment(), "Data Pembiayaan Desa")
+        adapter.populateFragment(TotalPembiayaanDesaFragment(), "Total Pembiayaan Desa")
+        viewPager.adapter = adapter
+        tabPembiayaanDesa.setupWithViewPager(viewPager)
     }
 
+
+
+    override fun onNothingSelected() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onValueSelected(e: Entry?, dataSetIndex: Int, h: Highlight?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
 }

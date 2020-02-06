@@ -7,16 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.*
 import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.Highlight
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import id.co.iconpln.smartcity.R
+import id.co.iconpln.smartcity.util.ViewPagerAdapter
 import id.co.iconpln.smartcity.ui.publicservices.pengaduan.datapengaduanFragment
 import id.co.iconpln.smartcity.ui.publicservices.jenispengaduan.jenispengaduanFragment
-import kotlinx.android.synthetic.main.fragment_jenispengaduan.*
 import kotlinx.android.synthetic.main.fragment_publicservices.*
 
 class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
@@ -28,7 +28,7 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupTab()
+        setupTab(viewpagerPengaduan)
 
         val dataPerijinan = BarData(xAxisValuePerijinan(), dataSetsPerijinan())
         graphPerijinan(dataPerijinan)
@@ -40,10 +40,12 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
 
     }
 
-    private fun setupTab() {
-        val adapter = PengaduanPagerAdapter(childFragmentManager)
-        viewpagerPengaduan.adapter = adapter
-        tabpengaduan.setupWithViewPager(viewpagerPengaduan)
+    private fun setupTab(viewPager: ViewPager) {
+        val adapter = ViewPagerAdapter(childFragmentManager)
+        adapter.populateFragment(datapengaduanFragment(), "Data Pengaduan")
+        adapter.populateFragment(jenispengaduanFragment(), "Jenis Pengaduan")
+        viewPager.adapter = adapter
+        tabpengaduan.setupWithViewPager(viewPager)
     }
 
     private fun graphPerijinan(data: BarData){
@@ -128,7 +130,6 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
         graph_demograpi.axisRight.isEnabled = false
 
     }
-
     private fun dataSetsDemograpi(): ArrayList<BarDataSet>{
         val barLaki = ArrayList<BarEntry>()
         barLaki.add(BarEntry(10f, 0))
@@ -158,7 +159,6 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
 
         return  dataSets
     }
-
     private fun xAxisValueDemograpi(): ArrayList<String>{
         val xaxis = ArrayList<String>()
         xaxis.add("5-11")
