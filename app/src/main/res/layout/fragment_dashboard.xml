@@ -7,107 +7,277 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/bg_primary"
-        tools:context="id.co.iconpln.smartcity.ui.dashboard.DashboardActivity">
+        tools:context=".ui.dashboard.DashboardActivity">
 
     <include layout="@layout/layout_toolbar_white"/>
 
+    <RelativeLayout
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="12dp">
+
     <Spinner
-    android:id="@+id/spinner"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_spinner"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    android:layout_marginTop="12dp"
-    android:layout_below="@id/toolbar"
-    android:entries="@array/daftar_tahun">
-    </Spinner>
+    android:entries="@array/daftar_tahun"
+    android:textSize="12sp"
+    android:minHeight="0dp"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="5dp"
+            app:srcCompat="@drawable/icon_down_arrow"/>
+    </RelativeLayout>
 
     <HorizontalScrollView
-    android:id="@+id/slide"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/spinner"
-    android:orientation="horizontal">
-
-    //linear on scrollview
-    <LinearLayout
+            android:id="@+id/slide"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner"
+            android:orientation="horizontal"
+            android:scrollbars="none">
 
+        //linear on scrollview
         <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/bg_summary"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/bg_summary"/>
 
-        <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/bg_summary"/>
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bg_summary">
 
-    </LinearLayout>
+                <TextView
+                        android:id="@+id/textPengaduan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:fontFamily="@font/roboto"
+                        android:text="Total Pengaduan"
+                        android:textColor="@color/onyx"
+                        android:textSize="12sp" />
+
+                <TextView
+                        android:id="@+id/textTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto"
+                        android:text="547"
+                        android:textColor="@color/onyx"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/chart_total_pengaduan" />
+
+                <LinearLayout
+                        android:layout_width="108dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/textBaru"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:padding="10sp"
+                            android:text="114 -> Baru"
+                            android:textColor="@color/onyx"
+                            android:textSize="12sp" />
+
+                    <TextView
+                            android:id="@+id/textProses"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:padding="10sp"
+                            android:text="153 -> Proses"
+                            android:textColor="@color/onyx"
+                            android:textSize="12sp" />
+
+                    <TextView
+                            android:id="@+id/textSelesai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:padding="10sp"
+                            android:text="280 -> Selesai"
+                            android:textColor="@color/onyx"
+                            android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bg_summary" />
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bg_summary">
+
+                <TextView
+                        android:id="@+id/textPengaduan2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:fontFamily="@font/roboto"
+                        android:text="Total Perijinan"
+                        android:textColor="@color/onyx"
+                        android:textSize="12sp" />
+
+                <TextView
+                        android:id="@+id/textTotal2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto"
+                        android:text="718"
+                        android:textColor="@color/onyx"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/chart_total_pengaduan" />
+
+                <LinearLayout
+                        android:layout_width="108dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/textBaru2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:padding="10sp"
+                            android:text="0 -> Baru"
+                            android:textColor="@color/onyx"
+                            android:textSize="12sp" />
+
+                    <TextView
+                            android:id="@+id/textProses2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:padding="10sp"
+                            android:text="0 -> Proses"
+                            android:textColor="@color/onyx"
+                            android:textSize="12sp" />
+
+                    <TextView
+                            android:id="@+id/textSelesai2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:padding="10sp"
+                            android:text="718 -> Selesai"
+                            android:textColor="@color/onyx"
+                            android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
     </HorizontalScrollView>
 
     <LinearLayout
     android:id="@+id/graph"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_below="@id/slide"
     android:layout_marginTop="12dp"
+    android:orientation="vertical"
     android:background="@drawable/bg_graph">
 
-        <LinearLayout
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="?actionBarSize"
+            app:tabTextAppearance="@style/tab_text"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabIndicatorHeight="2dp"
+            app:tabIndicatorGravity="bottom"
+            app:tabMode="fixed"
             android:layout_marginHorizontal="16dp"
             android:orientation="horizontal">
 
-        <TextView
-                android:layout_width="86dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="8dp"
-                android:gravity="center"
-                android:text="Jumlah Pengaduan"
-                android:textColor="#42A5F5"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+        </com.google.android.material.tabs.TabLayout>
 
-        <TextView
+
+        <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewpagerDashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+            </androidx.viewpager.widget.ViewPager>
+
+            <!--<TextView
+                    android:id="@+id/txt_jumlahPengaduan"
+                    android:layout_width="86dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center"
+                    android:text="Jumlah Pengaduan"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_apbd"
                 android:layout_width="86dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:layout_marginRight="12dp"
                 android:gravity="center"
                 android:text="Penyerapan Anggaran APBD"
                 android:textSize="12sp" />
 
         <TextView
+                android:id="@+id/txt_pajak"
                 android:layout_width="86dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:text="Pendapatan Pajak"
                 android:textSize="12sp" />
 
         <TextView
+                android:id="@+id/txt_kesehatan"
                 android:layout_width="86dp"
-                android:layout_height="50dp"
+                android:layout_height="45dp"
                 android:gravity="center"
                 android:text="Data Kesehatan"
-                android:textSize="12sp" />
-        </LinearLayout>
+                android:textSize="12sp" />-->
+
     </LinearLayout>
 </RelativeLayout>

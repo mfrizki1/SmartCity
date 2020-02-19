@@ -6,6 +6,8 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import id.co.iconpln.smartcity.R
+import id.co.iconpln.smartcity.ui.ekonomi.EkonomiFragment
+import id.co.iconpln.smartcity.ui.publicservices.PublicServicesFragment
 
 class DashboardActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -27,8 +29,8 @@ class DashboardActivity : AppCompatActivity(), BottomNavigationView.OnNavigation
         var fragment: Fragment? = null
         when (item.itemId){
             R.id.nav_home -> fragment = DashboardFragment()
-//            R.id.nav_public_service -> fragment = PengaduanFragment()
-//            R.id.nav_ekonomi -> fragment = EkonomiFragment()
+            R.id.nav_public_service -> fragment = PublicServicesFragment()
+            R.id.nav_ekonomi -> fragment = EkonomiFragment()
 //            R.id.nav_account -> fragment = AccountFragment()
         }
         return loadFragment(fragment)

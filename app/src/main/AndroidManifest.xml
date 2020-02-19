@@ -14,6 +14,14 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme.Base"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ui.dashboard.penyerapanapbd.PenyerapanAPBDFragment"></activity>
+        <activity android:name=".ui.dashboard.pendapatanpajak.PendapatanPajakFragment" />
+        <activity android:name=".ui.dashboard.jumlahpengaduan.JumlahPengaduanFragment" />
+        <activity android:name=".ui.dashboard.datakesehatan.DataKesehatanFragment" />
+        <activity android:name=".ui.publicservices.PublicServicesFragment" />
+        <activity android:name=".ui.publicservices.pengaduan.datapengaduanFragment" />
+        <activity android:name=".ui.publicservices.jenispengaduan.jenispengaduanFragment" />
+        <activity android:name=".ui.ekonomi.EkonomiFragment" />
         <activity
                 android:name=".ui.dashboard.DashboardActivity"
                 android:configChanges="orientation"

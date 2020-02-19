@@ -301,4 +301,10 @@
         <item name="fontPath">fonts/GoogleSans-Bold.ttf</item>
     </style>
 
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/text_12</item>
+    </style>
+
 </resources>
