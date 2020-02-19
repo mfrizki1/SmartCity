@@ -77,12 +77,12 @@
 
                     </com.google.android.material.tabs.TabLayout>
 
-                    <androidx.viewpager.widget.ViewPager
+                    <id.co.iconpln.smartcity.widget.SwipeLockableViewPager
                             android:id="@+id/viewpagerPengaduan"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                    </androidx.viewpager.widget.ViewPager>
+                    </id.co.iconpln.smartcity.widget.SwipeLockableViewPager>
 
                     <!--//data pengaduan
                     <LinearLayout

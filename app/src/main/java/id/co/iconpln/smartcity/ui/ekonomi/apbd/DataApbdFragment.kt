@@ -18,6 +18,7 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.Highlight
+import com.github.mikephil.charting.utils.LargeValueFormatter
 import com.github.mikephil.charting.utils.ValueFormatter
 
 import id.co.iconpln.smartcity.R
@@ -51,6 +52,7 @@ class DataApbdFragment : Fragment(), OnChartValueSelectedListener {
         graph_apbd.setDrawGridBackground(false)
         graph_apbd.setDrawBarShadow(false)
         graph_apbd.isHighlightEnabled = false
+        graph_apbd.setVisibleXRange(7f)
         graph_apbd.animateXY(500, 500)
 
         val l = graph_apbd.legend
@@ -85,18 +87,18 @@ class DataApbdFragment : Fragment(), OnChartValueSelectedListener {
 
         val barDataSet1 = BarDataSet(total, "Total Anggaran")
         barDataSet1.setColor(Color.rgb(0, 155, 0))
-        barDataSet1.valueTextSize = 6f
+        barDataSet1.valueTextSize = 7f
         barDataSet1.valueFormatter = DataValueFormatter
 
         val barDataSet2 = BarDataSet(realisasi, "Realisasi Anggaran")
         barDataSet2.setColor(Color.rgb(0, 0, 155))
-        barDataSet2.valueTextSize = 6f
+        barDataSet2.valueTextSize = 7f
         barDataSet2.valueFormatter = DataValueFormatter
 
 
         val barDataSet3 = BarDataSet(belum, "Belum Realisasi")
         barDataSet3.setColor(Color.rgb(155, 0, 0))
-        barDataSet3.valueTextSize = 6f
+        barDataSet3.valueTextSize = 7f
         barDataSet3.valueFormatter = DataValueFormatter
 
         val dataSets = ArrayList<BarDataSet>()
@@ -127,7 +129,7 @@ class DataApbdFragment : Fragment(), OnChartValueSelectedListener {
 
     object MyValueFormatter : ValueFormatter{
         override fun getFormattedValue(value: Float): String {
-            var format = DecimalFormat("")
+            var format = DecimalFormat("###,###,####")
             if (value > 1000){
                 return "RP. "+format.format(value)+ " Miliar"
             }
@@ -138,10 +140,11 @@ class DataApbdFragment : Fragment(), OnChartValueSelectedListener {
 
     object DataValueFormatter: ValueFormatter{
         override fun getFormattedValue(value: Float): String {
+            var format = DecimalFormat("###,###,##0.0")
             if (value > 1000){
-                return "RP. "+value+ " Miliar"
+                return "RP. "+format.format(value)+ " Miliar"
             }
-            return "RP. "+value+ " Juta"
+            return "RP. "+format.format(value)+ " Juta"
         }
 
     }

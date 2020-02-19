@@ -11,6 +11,8 @@ import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
+import com.github.mikephil.charting.utils.LargeValueFormatter
+import com.github.mikephil.charting.utils.PercentFormatter
 
 import id.co.iconpln.smartcity.R
 import id.co.iconpln.smartcity.util.ColorTempl
@@ -39,6 +41,7 @@ class TotalApbdFragment : Fragment() {
         dataSet.valueTextSize = 12f
         dataSet.setColors(ColorTempl.custom)
         dataSet.valueTextColor = resources.getColor(R.color.ghost_white)
+        dataSet.valueFormatter = PercentFormatter()
 
         val jenis = ArrayList<String>()
         jenis.add("Realisasi")
@@ -48,7 +51,7 @@ class TotalApbdFragment : Fragment() {
         pieTotalApbd.data = data
 
         pieTotalApbd.isDrawHoleEnabled = false
-        pieTotalApbd.isRotationEnabled = false
+        pieTotalApbd.isRotationEnabled = true
         pieTotalApbd.setDescription("")
         pieTotalApbd.setTouchEnabled(true)
         pieTotalApbd.setDrawSliceText(true)

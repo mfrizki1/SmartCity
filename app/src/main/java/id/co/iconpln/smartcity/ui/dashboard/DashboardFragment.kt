@@ -11,6 +11,7 @@ import android.view.ViewGroup
 
 import id.co.iconpln.smartcity.R
 import kotlinx.android.synthetic.main.fragment_dashboard.*
+import kotlinx.android.synthetic.main.layout_toolbar_white.*
 
 class DashboardFragment : Fragment(), View.OnClickListener{
 
@@ -26,6 +27,7 @@ class DashboardFragment : Fragment(), View.OnClickListener{
         txt_apbd.setOnClickListener (this)
         txt_pajak.setOnClickListener(this)
         txt_kesehatan.setOnClickListener(this)
+
 
 
     }

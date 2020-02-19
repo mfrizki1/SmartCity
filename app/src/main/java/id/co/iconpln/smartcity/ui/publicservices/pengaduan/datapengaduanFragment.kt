@@ -17,6 +17,7 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.Highlight
+import com.github.mikephil.charting.utils.LargeValueFormatter
 import id.co.iconpln.smartcity.R
 import kotlinx.android.synthetic.main.fragment_datapengaduan.*
 
@@ -46,12 +47,14 @@ class datapengaduanFragment : Fragment(), OnChartValueSelectedListener {
 
         graph_pengaduan.xAxis.position = XAxis.XAxisPosition.BOTTOM
         graph_pengaduan.xAxis.textSize = 9f
-        graph_pengaduan.xAxis.typeface = Typeface.DEFAULT
+        graph_pengaduan.xAxis.typeface = Typeface.SANS_SERIF
         graph_pengaduan.xAxis.setDrawGridLines(false)
         graph_pengaduan.setDrawGridBackground(false)
         graph_pengaduan.setDrawBarShadow(false)
         graph_pengaduan.isHighlightEnabled = false
+        graph_pengaduan.setVisibleXRange(7f)
 
+        graph_pengaduan.axisLeft.valueFormatter = LargeValueFormatter()
         val l = graph_pengaduan.legend
         l.form = Legend.LegendForm.CIRCLE
         l.position = Legend.LegendPosition.BELOW_CHART_CENTER
@@ -105,15 +108,20 @@ class datapengaduanFragment : Fragment(), OnChartValueSelectedListener {
 
         val barDataSet1 = BarDataSet(selesai, "Selesai")
         barDataSet1.setColor(Color.rgb(0, 155, 0))
-        barDataSet1.valueTextSize = 7f
+        barDataSet1.valueTextSize = 8f
+        barDataSet1.valueFormatter = LargeValueFormatter()
 
-        val barDataSet2 = BarDataSet(proses, "Dproses")
+        val barDataSet2 = BarDataSet(proses, "Diproses")
         barDataSet2.setColor(Color.rgb(0, 0, 155))
-        barDataSet2.valueTextSize = 7f
+        barDataSet2.valueTextSize = 8f
+        barDataSet2.valueFormatter = LargeValueFormatter()
+
 
         val barDataSet3 = BarDataSet(belum, "Belum Selesai")
         barDataSet3.setColor(Color.rgb(155, 0, 0))
-        barDataSet3.valueTextSize = 7f
+        barDataSet3.valueTextSize = 8f
+        barDataSet3.valueFormatter = LargeValueFormatter()
+
 
         val dataSets = ArrayList<BarDataSet>()
         dataSets.add(barDataSet1)

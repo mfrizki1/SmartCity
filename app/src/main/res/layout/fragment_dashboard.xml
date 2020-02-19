@@ -9,7 +9,7 @@
         android:background="@drawable/bg_primary"
         tools:context="id.co.iconpln.smartcity.ui.dashboard.DashboardActivity">
 
-    <include layout="@layout/layout_toolbar_white"/>
+
 
     <!--SPINNER-->
     <RelativeLayout

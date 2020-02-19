@@ -9,15 +9,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.utils.LargeValueFormatter
 import com.github.mikephil.charting.utils.ValueFormatter
 
 import id.co.iconpln.smartcity.R
 import kotlinx.android.synthetic.main.fragment_data_pendapatan_desa.*
+import java.text.DecimalFormat
 
 
 class DataPendapatanDesaFragment : Fragment() {
@@ -46,12 +49,16 @@ class DataPendapatanDesaFragment : Fragment() {
         graph_datapendapatandesa.setDrawGridBackground(false)
         graph_datapendapatandesa.setDrawBarShadow(false)
         graph_datapendapatandesa.isHighlightEnabled = false
+        graph_datapendapatandesa.setVisibleXRange(7f)
+
+        graph_datapendapatandesa.axisLeft.valueFormatter = MyValueFormatter
+
+        graph_datapendapatandesa.axisRight.isEnabled = false
 
         val l = graph_datapendapatandesa.legend
         l.form = Legend.LegendForm.CIRCLE
         l.position = Legend.LegendPosition.BELOW_CHART_CENTER
 
-        graph_datapendapatandesa.axisRight.isEnabled = false
 
 
     }
@@ -142,14 +149,27 @@ class DataPendapatanDesaFragment : Fragment() {
         return xaxis
     }
 
-    object DataValueFormatter: ValueFormatter {
+    object MyValueFormatter : ValueFormatter{
         override fun getFormattedValue(value: Float): String {
+            var format = DecimalFormat("###,###,####")
             if (value > 1000){
-                return "RP. "+value+ " Miliar"
+                return "RP. "+format.format(value)+ " Miliar"
             }
-            return "RP. "+value+ " Juta"
+            return "RP. "+format.format(value)+ " Juta"
         }
 
     }
+
+    object DataValueFormatter: ValueFormatter{
+        override fun getFormattedValue(value: Float): String {
+            var format = DecimalFormat("###,###,##0.0")
+            if (value > 1000){
+                return "RP. "+format.format(value)+ " Miliar"
+            }
+            return "RP. "+format.format(value)+ " Juta"
+        }
+
+    }
+
 
 }

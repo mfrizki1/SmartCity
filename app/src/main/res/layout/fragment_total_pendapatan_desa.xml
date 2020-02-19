@@ -4,8 +4,8 @@
         android:layout_height="match_parent"
         tools:context="id.co.iconpln.smartcity.ui.ekonomi.pendapatandesa.TotalPendapatanDesaFragment">
 
-    <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/graph_totalpendapatandesa"
+    <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieTotalpendapatandesa"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

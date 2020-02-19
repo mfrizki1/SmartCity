@@ -10,6 +10,7 @@ import id.co.iconpln.smartcity.R
 import id.co.iconpln.smartcity.ui.ekonomi.EkonomiFragment
 import id.co.iconpln.smartcity.ui.publicservices.PublicServicesFragment
 import kotlinx.android.synthetic.main.activity_dashboard.*
+import kotlinx.android.synthetic.main.layout_toolbar_white.*
 
 class DashboardActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -25,6 +26,9 @@ class DashboardActivity : AppCompatActivity(), BottomNavigationView.OnNavigation
         if(savedInstanceState == null){
             Bottom_menu.setSelectedItemId(R.id.nav_home)
         }
+
+        setSupportActionBar(toolbar)
+//        supportActionBar?.title =
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

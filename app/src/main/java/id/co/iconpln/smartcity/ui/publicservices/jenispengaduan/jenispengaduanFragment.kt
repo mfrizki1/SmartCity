@@ -17,10 +17,7 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
-import com.github.mikephil.charting.utils.ColorTemplate
-import com.github.mikephil.charting.utils.Highlight
-import com.github.mikephil.charting.utils.LargeValueFormatter
-import com.github.mikephil.charting.utils.ValueFormatter
+import com.github.mikephil.charting.utils.*
 
 import id.co.iconpln.smartcity.R
 import id.co.iconpln.smartcity.util.ColorTempl
@@ -50,7 +47,7 @@ class jenispengaduanFragment : Fragment(), OnChartValueSelectedListener {
         val dataSet = PieDataSet(value, "")
         dataSet.valueTextSize = 10f
         dataSet.setColors(ColorTempl.custom)
-        dataSet.valueFormatter = MyValueFormatter
+        dataSet.valueFormatter = PercentFormatter()
         dataSet.valueTextColor = resources.getColor(R.color.ghost_white)
 
 
@@ -66,7 +63,7 @@ class jenispengaduanFragment : Fragment(), OnChartValueSelectedListener {
         piePengaduan.data = data
 
         piePengaduan.isDrawHoleEnabled = false
-        piePengaduan.isRotationEnabled = false
+        piePengaduan.isRotationEnabled = true
         piePengaduan.setDescription("")
         piePengaduan.setDrawSliceText(true)
         piePengaduan.setDrawCenterText(true)
