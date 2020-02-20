@@ -1,66 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="id.co.iconpln.smartcity.ui.login.LoginActivity">
+    tools:context="id.co.iconpln.smartcity.ui.login.LoginActivity"
+    android:layout_gravity="center_horizontal">
 
     <include layout="@layout/layout_toolbar_white" />
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/layout_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/appCompatTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_x3"
-                android:layout_marginLeft="@dimen/space_x3"
+                android:layout_marginLeft="@dimen/space_x2"
                 android:layout_marginTop="@dimen/space_x2"
                 android:text="@string/label_login"
+                android:fontFamily="@font/roboto"
                 android:textAppearance="@style/TextAppearance.App.TextInputLayout.Bold"
                 android:textSize="@dimen/text_32"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_below="@+id/toolbar"/>
 
             <id.co.iconpln.smartcity.widget.InputEditText
-                android:id="@+id/txt_email"
-                app:ietHint="@string/label_email"
+                android:id="@+id/ed_username"
+                app:ietHint="Username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_x3"
-                android:layout_marginLeft="@dimen/space_x3"
-                android:layout_marginTop="@dimen/space_x4"
-                android:layout_marginEnd="@dimen/space_x3"
-                android:layout_marginRight="@dimen/space_x3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
+                android:layout_marginHorizontal="@dimen/space_x2"
+                android:layout_marginTop="@dimen/space_x3"
+                android:layout_below="@+id/appCompatTextView"/>
 
             <id.co.iconpln.smartcity.widget.InputEditText
                 android:inputType="textPassword"
-                android:id="@+id/txt_password"
+                android:id="@+id/ed_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_x3"
-                android:layout_marginLeft="@dimen/space_x3"
-                android:layout_marginTop="@dimen/space_x2"
-                android:layout_marginEnd="@dimen/space_x3"
-                android:layout_marginRight="@dimen/space_x3"
+                android:layout_marginHorizontal="@dimen/space_x2"
+                android:layout_marginTop="@dimen/space"
                 app:ietHint="@string/label_password"
                 app:ietPasswordToggleEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_email" />
+                android:layout_below="@+id/ed_username"/>
 
             <id.co.iconpln.smartcity.widget.ButtonLoading
                 android:id="@+id/btn_login"
@@ -72,34 +52,11 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
                 android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/appCompatButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/appCompatButton"
-                style="@style/Base.Widget.AppCompat.Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginBottom="24dp"
-                android:background="@null"
-                android:textColor="@color/onyx"
-                android:text="@string/label_forgot_password"
-                android:textAllCaps="false"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_marginTop="@dimen/space_x4"
+                android:padding="10dp"
+                android:layout_alignParentBottom="true"/>
 
 
 
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-</LinearLayout>
+</RelativeLayout>
