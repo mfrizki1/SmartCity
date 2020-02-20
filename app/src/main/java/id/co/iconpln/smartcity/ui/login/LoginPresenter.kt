@@ -7,5 +7,5 @@ import id.co.iconpln.smartcity.ui.base.BasePresenter
  */
 interface LoginPresenter: BasePresenter<LoginViewHelper> {
 
-    fun login(username: String, password: String)
+    fun login(user_id: String, city_id: String, password: String)
 }

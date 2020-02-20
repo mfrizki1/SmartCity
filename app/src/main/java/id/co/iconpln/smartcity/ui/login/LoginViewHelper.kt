@@ -1,5 +1,6 @@
 package id.co.iconpln.smartcity.ui.login
 
+import id.co.iconpln.smartcity.data.model.local.LoginDto
 import id.co.iconpln.smartcity.ui.base.BaseViewHelper
 
 /**
@@ -7,7 +8,7 @@ import id.co.iconpln.smartcity.ui.base.BaseViewHelper
  */
 interface LoginViewHelper: BaseViewHelper {
 
-    fun showButtonProgress()
+    fun doLogin(loginDto: ArrayList<LoginDto>)
 
     fun hideButtonProgress()
 }

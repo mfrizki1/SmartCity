@@ -11,6 +11,8 @@
     <string name="label_email">Email</string>
     <string name="label_password">Password</string>
     <string name="label_forgot_password">Forgot password?</string>
+    <string name="label_provinsi">Pilih Provinsi</string>
+    <string name="label_kota">Pilih Kota</string>
 
     <string-array name="daftar_tahun">
         <item>2019</item>
