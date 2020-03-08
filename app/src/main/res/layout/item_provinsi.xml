@@ -10,6 +10,7 @@
             android:text="Aceh"
             android:textSize="@dimen/text_18"
             android:textColor="@color/onyx"
-            android:layout_margin="@dimen/space_x1_half"/>
+            android:layout_margin="@dimen/space_x1_half"
+            android:fontFamily="@font/roboto"/>
 
 </RelativeLayout>

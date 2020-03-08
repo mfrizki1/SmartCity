@@ -40,7 +40,7 @@ class DataApbdFragment : Fragment(), OnChartValueSelectedListener {
 
         val data = BarData(xAxisValue(), dataSets())
 
-        graph_apbd.data= data
+        graph_apbd.data = data
         graph_apbd.setDescription("")
         graph_apbd.animateXY(500, 500)
         graph_apbd.invalidate()
@@ -61,27 +61,27 @@ class DataApbdFragment : Fragment(), OnChartValueSelectedListener {
 
         graph_apbd.axisRight.isEnabled = false
 
-        val yAxis : YAxis = graph_apbd.getAxis(YAxis.AxisDependency.LEFT)
+        val yAxis: YAxis = graph_apbd.getAxis(YAxis.AxisDependency.LEFT)
         yAxis.setStartAtZero(false)
         yAxis.setValueFormatter(MyValueFormatter)
     }
 
-    private fun dataSets():ArrayList<BarDataSet>{
+    private fun dataSets(): ArrayList<BarDataSet> {
         val total = ArrayList<BarEntry>()
         total.add(BarEntry(600f, 0))
-        total.add(BarEntry(500f,1))
+        total.add(BarEntry(500f, 1))
         total.add(BarEntry(650f, 2))
         total.add(BarEntry(700f, 3))
 
         val realisasi = ArrayList<BarEntry>()
         realisasi.add(BarEntry(827.4f, 0))
-        realisasi.add(BarEntry(819.8f,1))
+        realisasi.add(BarEntry(819.8f, 1))
         realisasi.add(BarEntry(986.8f, 2))
         realisasi.add(BarEntry(1006f, 3))
 
         val belum = ArrayList<BarEntry>()
         belum.add(BarEntry(-227.4f, 0))
-        belum.add(BarEntry(-319.8f,1))
+        belum.add(BarEntry(-319.8f, 1))
         belum.add(BarEntry(-336.8f, 2))
         belum.add(BarEntry(-359.4f, 3))
 
@@ -106,10 +106,10 @@ class DataApbdFragment : Fragment(), OnChartValueSelectedListener {
         dataSets.add(barDataSet2)
         dataSets.add(barDataSet3)
 
-        return  dataSets
+        return dataSets
     }
 
-    private fun xAxisValue(): ArrayList<String>{
+    private fun xAxisValue(): ArrayList<String> {
         val xaxis = ArrayList<String>()
         xaxis.add("Ngraho")
         xaxis.add("Ngambon")
@@ -127,24 +127,24 @@ class DataApbdFragment : Fragment(), OnChartValueSelectedListener {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    object MyValueFormatter : ValueFormatter{
+    object MyValueFormatter : ValueFormatter {
         override fun getFormattedValue(value: Float): String {
             var format = DecimalFormat("###,###,####")
-            if (value > 1000){
-                return "RP. "+format.format(value)+ " Miliar"
+            if (value > 1000) {
+                return "RP. " + format.format(value) + " Miliar"
             }
-            return "RP. "+format.format(value)+ " Juta"
+            return "RP. " + format.format(value) + " Juta"
         }
 
     }
 
-    object DataValueFormatter: ValueFormatter{
+    object DataValueFormatter : ValueFormatter {
         override fun getFormattedValue(value: Float): String {
             var format = DecimalFormat("###,###,##0.0")
-            if (value > 1000){
-                return "RP. "+format.format(value)+ " Miliar"
+            if (value > 1000) {
+                return "RP. " + format.format(value) + " Miliar"
             }
-            return "RP. "+format.format(value)+ " Juta"
+            return "RP. " + format.format(value) + " Juta"
         }
 
     }

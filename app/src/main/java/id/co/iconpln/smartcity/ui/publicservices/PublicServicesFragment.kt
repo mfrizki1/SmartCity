@@ -8,21 +8,26 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
-import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.*
 import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.Highlight
 import com.github.mikephil.charting.utils.LargeValueFormatter
 import id.co.iconpln.smartcity.R
+import id.co.iconpln.smartcity.ui.base.BaseFragment
 import id.co.iconpln.smartcity.util.ViewPagerAdapter
-import id.co.iconpln.smartcity.ui.publicservices.pengaduan.datapengaduanFragment
+import id.co.iconpln.smartcity.ui.publicservices.pengaduan.DataPengaduanFragment
 import id.co.iconpln.smartcity.ui.publicservices.jenispengaduan.jenispengaduanFragment
 import kotlinx.android.synthetic.main.fragment_publicservices.*
 
-class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
+class PublicServicesFragment : BaseFragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) =
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ) =
         inflater.inflate(R.layout.fragment_publicservices, container, false)
 
 
@@ -38,26 +43,29 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
         graphDemograpi(dataDemograpi)
 
 
-
     }
 
     private fun setupTab(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(childFragmentManager)
-        adapter.populateFragment(datapengaduanFragment(), "Data Pengaduan")
+        adapter.populateFragment(DataPengaduanFragment(), "Data Pengaduan")
         adapter.populateFragment(jenispengaduanFragment(), "Jenis Pengaduan")
         viewPager.adapter = adapter
         tabpengaduan.setupWithViewPager(viewPager)
     }
 
-    private fun graphPerijinan(data: BarData){
-        graph_perijinan.data= data
+    private fun graphPerijinan(data: BarData) {
+
+        val tf: Typeface =
+            Typeface.createFromAsset(activity!!.assets, "fonts/GoogleSans-Regular.ttf")
+
+        graph_perijinan.data = data
         graph_perijinan.setDescription("")
         graph_perijinan.animateXY(500, 500)
         graph_perijinan.invalidate()
 
         graph_perijinan.xAxis.position = XAxis.XAxisPosition.BOTTOM
         graph_perijinan.xAxis.textSize = 9f
-        graph_perijinan.xAxis.typeface = Typeface.DEFAULT
+        graph_perijinan.xAxis.typeface = tf
         graph_perijinan.xAxis.setDrawGridLines(false)
         graph_perijinan.setDrawGridBackground(false)
         graph_perijinan.setDrawBarShadow(false)
@@ -68,10 +76,15 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
 
         graph_perijinan.axisRight.isEnabled = false
     }
-    private fun dataSetsPerijinan():ArrayList<BarDataSet>{
+
+    private fun dataSetsPerijinan(): ArrayList<BarDataSet> {
+
+        val tf: Typeface =
+            Typeface.createFromAsset(activity!!.assets, "fonts/GoogleSans-Regular.ttf")
+
         val bar1 = ArrayList<BarEntry>()
         bar1.add(BarEntry(10f, 0))
-        bar1.add(BarEntry(8f,1))
+        bar1.add(BarEntry(8f, 1))
         bar1.add(BarEntry(45f, 2))
         bar1.add(BarEntry(15f, 3))
         bar1.add(BarEntry(25f, 4))
@@ -84,17 +97,19 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
         bar1.add(BarEntry(14f, 11))
 
         val barDataSet1 = BarDataSet(bar1, "")
-        barDataSet1.setColor(Color.rgb(0, 155, 50))
+        barDataSet1.setColor(Color.rgb(204, 232, 255))
         barDataSet1.valueTextSize = 6f
+        barDataSet1.valueTypeface = tf
         barDataSet1.valueFormatter = LargeValueFormatter()
 
 
         val dataSets = ArrayList<BarDataSet>()
         dataSets.add(barDataSet1)
 
-        return  dataSets
+        return dataSets
     }
-    private fun xAxisValuePerijinan(): ArrayList<String>{
+
+    private fun xAxisValuePerijinan(): ArrayList<String> {
         val xaxis = ArrayList<String>()
         xaxis.add("JAN")
         xaxis.add("FEB")
@@ -112,7 +127,11 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
         return xaxis
     }
 
-    private fun graphDemograpi(data: BarData){
+    private fun graphDemograpi(data: BarData) {
+
+        val tf: Typeface =
+            Typeface.createFromAsset(activity!!.assets, "fonts/GoogleSans-Regular.ttf")
+
         graph_demograpi.data = data
         graph_demograpi.setDescription("")
         graph_demograpi.animateXY(500, 500)
@@ -120,7 +139,7 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
 
         graph_demograpi.xAxis.position = XAxis.XAxisPosition.BOTTOM
         graph_demograpi.xAxis.textSize = 9f
-        graph_demograpi.xAxis.typeface = Typeface.DEFAULT
+        graph_demograpi.xAxis.typeface = tf
         graph_demograpi.xAxis.setDrawGridLines(false)
         graph_demograpi.setDrawGridBackground(false)
         graph_demograpi.setDrawBarShadow(false)
@@ -135,10 +154,15 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
         l.position = Legend.LegendPosition.BELOW_CHART_CENTER
 
     }
-    private fun dataSetsDemograpi(): ArrayList<BarDataSet>{
+
+    private fun dataSetsDemograpi(): ArrayList<BarDataSet> {
+
+        val tf: Typeface =
+            Typeface.createFromAsset(activity!!.assets, "fonts/GoogleSans-Regular.ttf")
+
         val barLaki = ArrayList<BarEntry>()
         barLaki.add(BarEntry(10f, 0))
-        barLaki.add(BarEntry(8f,1))
+        barLaki.add(BarEntry(8f, 1))
         barLaki.add(BarEntry(45f, 2))
         barLaki.add(BarEntry(15f, 3))
         barLaki.add(BarEntry(25f, 4))
@@ -151,22 +175,25 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
         barCewe.add(BarEntry(21f, 4))
 
         val barDataSetCowo = BarDataSet(barLaki, "Laki-Laki")
-        barDataSetCowo.setColor(Color.rgb(51, 153, 255))
+        barDataSetCowo.setColor(Color.rgb(204, 232, 255))
         barDataSetCowo.valueTextSize = 6f
+        barDataSetCowo.valueTypeface = tf
         barDataSetCowo.valueFormatter = LargeValueFormatter()
 
         val barDataSetCewe = BarDataSet(barCewe, "Perempuan")
-        barDataSetCewe.setColor(Color.rgb(255, 51, 51))
+        barDataSetCewe.setColor(Color.rgb(255, 204, 204))
         barDataSetCewe.valueTextSize = 6f
+        barDataSetCewe.valueTypeface = tf
         barDataSetCewe.valueFormatter = LargeValueFormatter()
 
         val dataSets = ArrayList<BarDataSet>()
         dataSets.add(barDataSetCewe)
         dataSets.add(barDataSetCowo)
 
-        return  dataSets
+        return dataSets
     }
-    private fun xAxisValueDemograpi(): ArrayList<String>{
+
+    private fun xAxisValueDemograpi(): ArrayList<String> {
         val xaxis = ArrayList<String>()
         xaxis.add("5-11")
         xaxis.add("11-17")
@@ -177,12 +204,8 @@ class PublicServicesFragment : Fragment(), OnChartValueSelectedListener{
         return xaxis
     }
 
-    override fun onNothingSelected() {
+    override fun onAuthFailed() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun onValueSelected(e: Entry?, dataSetIndex: Int, h: Highlight?) {
-
     }
 
 }

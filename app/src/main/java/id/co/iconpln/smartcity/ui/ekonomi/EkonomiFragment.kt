@@ -20,11 +20,12 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.Highlight
 import kotlinx.android.synthetic.main.fragment_ekonomi.*
 
-class EkonomiFragment : Fragment(), OnChartValueSelectedListener{
+class EkonomiFragment : Fragment(), OnChartValueSelectedListener {
 
 
     override fun onCreateView(
-        inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?)= inflater.inflate(R.layout.fragment_ekonomi, container, false)
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ) = inflater.inflate(R.layout.fragment_ekonomi, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,6 +44,7 @@ class EkonomiFragment : Fragment(), OnChartValueSelectedListener{
         viewPager.adapter = adapter
         tabApbd.setupWithViewPager(viewPager)
     }
+
     private fun setupTabPendapatanDesa(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(childFragmentManager)
         adapter.populateFragment(DataPendapatanDesaFragment(), "Data Pendapatan Desa")
@@ -50,6 +52,7 @@ class EkonomiFragment : Fragment(), OnChartValueSelectedListener{
         viewPager.adapter = adapter
         tabPendapatanDesa.setupWithViewPager(viewPager)
     }
+
     private fun setupTabPembiayaanDesa(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(childFragmentManager)
         adapter.populateFragment(DataPembiayaanDesaFragment(), "Data Pembiayaan Desa")
@@ -57,7 +60,6 @@ class EkonomiFragment : Fragment(), OnChartValueSelectedListener{
         viewPager.adapter = adapter
         tabPembiayaanDesa.setupWithViewPager(viewPager)
     }
-
 
 
     override fun onNothingSelected() {

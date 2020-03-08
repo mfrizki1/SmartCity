@@ -103,48 +103,32 @@
     android:background="@drawable/bg_graph">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <TextView
-                android:id="@+id/txt_jumlahPengaduan"
-                android:layout_width="86dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="8dp"
-                android:gravity="center"
-                android:text="Jumlah Pengaduan"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
-                android:textSize="12sp"
-                />
+            <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabDashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?actionBarSize"
+                    app:tabTextAppearance="@style/tab_text"
+                    app:tabSelectedTextColor="@color/colorPrimary"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="@color/colorPrimary"
+                    app:tabIndicatorHeight="2dp"
+                    app:tabIndicatorGravity="bottom"
+                    app:tabMode="fixed">
 
-        <TextView
-                android:id="@+id/txt_apbd"
-                android:layout_width="86dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="12dp"
-                android:gravity="center"
-                android:text="Penyerapan Anggaran APBD"
-                android:textSize="12sp" />
 
-        <TextView
-                android:id="@+id/txt_pajak"
-                android:layout_width="86dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="8dp"
-                android:gravity="center"
-                android:text="Pendapatan Pajak"
-                android:textSize="12sp" />
+            </com.google.android.material.tabs.TabLayout>
 
-        <TextView
-                android:id="@+id/txt_kesehatan"
-                android:layout_width="86dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:text="Data Kesehatan"
-                android:textSize="12sp" />
+            <id.co.iconpln.smartcity.widget.SwipeLockableViewPager
+                    android:id="@+id/viewpagerDash"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+            </id.co.iconpln.smartcity.widget.SwipeLockableViewPager>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

@@ -49,9 +49,9 @@ android {
         dev {
             resValue "string", "app_alias_name", "Dev " + appName
             applicationIdSuffix ".dev"
-            dimension "mode"
-            buildConfigField "String", "BASE_URL", "\"http://103.94.6.50/\""
-            buildConfigField "String", "FILE_URL", "\"http://103.94.6.50/\""
+            dimension "mode"                                
+            buildConfigField "String", "BASE_URL", "\"http://192.168.43.118:9000/\""
+            buildConfigField "String", "FILE_URL", "\"http://192.168.43.118:9000/\""
 
         }
         production {

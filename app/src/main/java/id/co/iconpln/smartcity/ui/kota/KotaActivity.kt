@@ -9,9 +9,11 @@ import id.co.iconpln.smartcity.R
 import id.co.iconpln.smartcity.data.model.local.CityDto
 import id.co.iconpln.smartcity.ui.base.BaseActivity
 import id.co.iconpln.smartcity.ui.base.adapter.RecyclerViewItemClickListener
+import id.co.iconpln.smartcity.ui.dashboard.DashboardActivity
 import id.co.iconpln.smartcity.ui.login.LoginActivity
 import id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivity.Companion.GET_ID_PROV
 import id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivity.Companion.GET_NAME_PROV
+import id.co.iconpln.smartcity.ui.publicservices.pengaduan.DataPengaduanFragment
 import kotlinx.android.synthetic.main.activity_kota.*
 import kotlinx.android.synthetic.main.layout_toolbar_white.*
 import javax.inject.Inject
@@ -63,10 +65,19 @@ class KotaActivity : BaseActivity(), RecyclerViewItemClickListener<CityDto>, Kot
     override fun itemClick(position: Int, item: CityDto?, viewId: Int) {
         item?.let {
             Toast.makeText(applicationContext, "Memilih " + item.name, Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, LoginActivity::class.java)
+//            val intent1 = Intent(this, DataPengaduanFragment::class.java)
+//            intent1.putExtra(GET_ID_CITY, item.id)
+//            intent1.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK
+
+            presenter.setCityId(item.id)
+
+            val intent = Intent(applicationContext, LoginActivity::class.java)
             intent.putExtra(GET_ID_CITY, item.id)
-            intent.putExtra(GET_NAME_CITY, item.name + GET_NAME_PROV)
+            intent.putExtra("CITY_NAME", item.name)
             startActivity(intent)
+
+
+//            intent.putExtra(GET_NAME_CITY, item.name)
         }
     }
 }

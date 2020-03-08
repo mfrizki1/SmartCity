@@ -31,17 +31,15 @@ class LoginPresenterImp
                 it.printStackTrace()
             }
             .subscribe({ response ->
-                viewHelper.hideButtonProgress()
                 when (response.status) {
                     NetworkStatus.SUCCESS -> {
                         viewHelper.doLogin(response.data.user)
-                        Log.e("response", "${response.data.user}")
                     }
                     else -> viewHelper.showSnackbarError(response.message)
                 }
             }, {
                 it.printStackTrace()
-                viewHelper.hideButtonProgress()
+                viewHelper.loginFailed()
             })
         )
 

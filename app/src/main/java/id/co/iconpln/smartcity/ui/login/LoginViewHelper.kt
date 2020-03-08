@@ -10,5 +10,5 @@ interface LoginViewHelper: BaseViewHelper {
 
     fun doLogin(loginDto: ArrayList<LoginDto>)
 
-    fun hideButtonProgress()
+    fun loginFailed()
 }

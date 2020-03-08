@@ -36,6 +36,9 @@ class jenispengaduanFragment : Fragment(), OnChartValueSelectedListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val tf : Typeface = Typeface.createFromAsset(activity!!.assets, "fonts/GoogleSans-Regular.ttf")
+
+
         val value = ArrayList<Entry>()
         value.add(Entry(110f, 0))
         value.add(Entry(60f, 1))
@@ -49,6 +52,7 @@ class jenispengaduanFragment : Fragment(), OnChartValueSelectedListener {
         dataSet.setColors(ColorTempl.custom)
         dataSet.valueFormatter = PercentFormatter()
         dataSet.valueTextColor = resources.getColor(R.color.ghost_white)
+        dataSet.valueTypeface = tf
 
 
         val jenis = ArrayList<String>()
@@ -61,6 +65,7 @@ class jenispengaduanFragment : Fragment(), OnChartValueSelectedListener {
 
         val data = PieData(jenis, dataSet)
         piePengaduan.data = data
+        piePengaduan.setCenterTextTypeface(tf)
 
         piePengaduan.isDrawHoleEnabled = false
         piePengaduan.isRotationEnabled = true
@@ -100,32 +105,4 @@ class jenispengaduanFragment : Fragment(), OnChartValueSelectedListener {
     }
 
 }
-
-/* private fun chartDetails(piePengaduan: PieChart, sansSerif: Typeface?) {
-     piePengaduan.description.isEnabled = true
-     piePengaduan.centerText = ""
-     piePengaduan.setCenterTextSize(10f)
-     piePengaduan.setCenterTextTypeface(sansSerif)
-     val l = piePengaduan.legend
-     piePengaduan.legend.isWordWrapEnabled = true
-     piePengaduan.legend.isEnabled = false
-     l.verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM
-     l.horizontalAlignment = Legend.LegendHorizontalAlignment.RIGHT
-     l.formSize = 20f
-     l.formToTextSpace = 5f
-     l.textSize = 12f
-     l.orientation = Legend.LegendOrientation.HORIZONTAL
-     l.isWordWrapEnabled = true
-     l.setDrawInside(false)
-     piePengaduan.setTouchEnabled(false)
-     piePengaduan.setDrawEntryLabels(false)
-     piePengaduan.legend.isWordWrapEnabled = true
-     piePengaduan.setExtraOffsets(20f, 0f, 20f, 0f)
-     piePengaduan.setUsePercentValues(true)
-     piePengaduan.setDrawCenterText(false)
-     piePengaduan.description.isEnabled = true
-     piePengaduan.isRotationEnabled = false
-
- }
-}*/
 

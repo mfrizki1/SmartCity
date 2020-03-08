@@ -1,31 +1,37 @@
 package id.co.iconpln.smartcity.ui.splash
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import id.co.iconpln.smartcity.R
 import id.co.iconpln.smartcity.ui.base.BaseActivity
+import id.co.iconpln.smartcity.ui.dashboard.DashboardActivity
 import id.co.iconpln.smartcity.ui.login.LoginActivity
+import id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivity
+import id.co.iconpln.smartcity.ui.publicservices.PublicServicesFragment
 import javax.inject.Inject
 
-class SplashActivity : BaseActivity(), SplashViewHelper {
+class SplashActivity : BaseActivity() {
 
-
-    @Inject
-    lateinit var presenter: SplashPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_splashscreen)
 
-        presenter.setView(this)
-        presenter.validateToken()
+        Handler().postDelayed({
+            navigateWelcomePage()
+//            navigatePengaduanPage()
+        }, 2000)
     }
 
-    override fun navigateWelcomePage() {
-        startActivity(LoginActivity.getIntent(this))
+    private fun navigateWelcomePage() {
+        startActivity(Intent(this, ProvinsiActivity::class.java))
         finish()
     }
 
-    override fun navigateHomePage() {
-
+    private fun navigatePengaduanPage() {
+        startActivity(Intent(this, DashboardActivity::class.java))
+        finish()
     }
+
 }

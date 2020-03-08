@@ -18,8 +18,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/layout_toolbar_white"/>
-
             <!--MAIN-->
             <LinearLayout
                     android:layout_width="match_parent"
