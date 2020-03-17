@@ -1,17 +1,10 @@
 package id.co.iconpln.smartcity.ui.publicservices
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.TextView
-import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.fragment.app.FragmentStatePagerAdapter
-import id.co.iconpln.smartcity.R
-import id.co.iconpln.smartcity.ui.publicservices.jenispengaduan.jenispengaduanFragment
-import id.co.iconpln.smartcity.ui.publicservices.pengaduan.datapengaduanFragment
+import id.co.iconpln.smartcity.ui.publicservices.jenispengaduan.JenisPengaduanFragment
+import id.co.iconpln.smartcity.ui.publicservices.pengaduan.DataPengaduanFragment
 
 
 class PengaduanPagerAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
@@ -23,10 +16,10 @@ class PengaduanPagerAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
      override fun getItem(position: Int): Fragment {
          return when (position) {
              0 -> {
-                 datapengaduanFragment()
+                 DataPengaduanFragment()
              }
              else -> {
-                 jenispengaduanFragment()
+                 JenisPengaduanFragment()
              }
 
          }

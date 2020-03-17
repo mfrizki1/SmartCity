@@ -36,4 +36,9 @@ class KotaPresenterImpl @Inject constructor(
 
 
     }
+
+    override fun setCityId(coba: String) {
+        userRepository.setCityId(coba)
+    }
+
 }
