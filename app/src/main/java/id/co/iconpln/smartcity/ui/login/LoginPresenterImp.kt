@@ -8,9 +8,6 @@ import id.co.iconpln.pengaduansubsidi.ui.base.BasePresenterImp
 import id.co.iconpln.smartcity.util.NetworkStatus
 import javax.inject.Inject
 
-/**
- * rizmaulana@live.com 2019-06-16.
- */
 class LoginPresenterImp
 @Inject constructor(
         val userRepository: UserRepository, provider: SchedulerProvider
@@ -31,11 +28,9 @@ class LoginPresenterImp
                 it.printStackTrace()
             }
             .subscribe({ response ->
-                viewHelper.hideButtonProgress()
                 when (response.status) {
                     NetworkStatus.SUCCESS -> {
                         viewHelper.doLogin(response.data.user)
-                        Log.e("response", "${response.data.user}")
                     }
                     else -> viewHelper.showSnackbarError(response.message)
                 }

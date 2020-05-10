@@ -1,9 +1,6 @@
 package id.co.iconpln.smartcity.data.source.remote
 
-import id.co.iconpln.smartcity.data.model.api.request.DataPengaduanRequest
-import id.co.iconpln.smartcity.data.model.api.request.KotaRequest
-import id.co.iconpln.smartcity.data.model.api.request.LoginRequest
-import id.co.iconpln.smartcity.data.model.api.request.ProvinsiRequest
+import id.co.iconpln.smartcity.data.model.api.request.*
 import javax.inject.Inject
 
 /**
@@ -18,6 +15,12 @@ class AppRemoteSource @Inject constructor(private val api: Api){
     fun cityByProv(province_id: String) = api.getCityByProv(province_id)
 
     fun getDataPengaduan(dataPengaduanRequest: DataPengaduanRequest) = api.getDataPengaduan(dataPengaduanRequest)
+
+    fun getJPengaduan(jPengaduanReq: JPengaduanReq) = api.getJPengaduan(jPengaduanReq)
+
+    fun getPerijinan(perijinanReq: PerijinanReq) = api.getPerijinan(perijinanReq)
+
+    fun getDemograpi(demograpiReq: DemograpiReq) = api.getDemograpi(demograpiReq)
 //    fun city() = api.getCity()
 
 }

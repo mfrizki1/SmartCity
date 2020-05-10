@@ -1,0 +1,587 @@
+@startuml
+
+title __APP's Class Diagram__\n
+
+  namespace id.co.iconpln.insidal.network {
+    class id.co.iconpln.insidal.network.RequestInterceptor_Factory {
+    }
+  }
+  
+
+  namespace id.co.iconpln.insidal.network {
+    class id.co.iconpln.insidal.network.ResponseInterceptor_Factory {
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    class id.co.iconpln.smartcity.AppController_MembersInjector {
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    class id.co.iconpln.smartcity.BuildConfig {
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace data.repository {
+      class id.co.iconpln.smartcity.data.repository.UserRepository_Factory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace data.source.db {
+      class id.co.iconpln.smartcity.data.source.db.AppDatabaseSource_Impl {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace data.source.db {
+      namespace dao {
+        class id.co.iconpln.smartcity.data.source.db.dao.ContactDao_Impl {
+        }
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace data.source.remote {
+      class id.co.iconpln.smartcity.data.source.remote.AppRemoteFileSource_Factory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace data.source.remote {
+      class id.co.iconpln.smartcity.data.source.remote.AppRemoteSource_Factory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.builder {
+      abstract class id.co.iconpln.smartcity.di.builder.ActivityBuilder_BindCityActivty {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.builder {
+      abstract class id.co.iconpln.smartcity.di.builder.ActivityBuilder_BindDashboard {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.builder {
+      abstract class id.co.iconpln.smartcity.di.builder.ActivityBuilder_BindDataPengaduan {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.builder {
+      abstract class id.co.iconpln.smartcity.di.builder.ActivityBuilder_BindJPengaduan {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.builder {
+      abstract class id.co.iconpln.smartcity.di.builder.ActivityBuilder_BindLoginActivity {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.builder {
+      abstract class id.co.iconpln.smartcity.di.builder.ActivityBuilder_BindProvinceActivty {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.builder {
+      abstract class id.co.iconpln.smartcity.di.builder.ActivityBuilder_BindPublicService {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.builder {
+      abstract class id.co.iconpln.smartcity.di.builder.ActivityBuilder_BindSplashActivity {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.component {
+      class id.co.iconpln.smartcity.di.component.DaggerAppComponent {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.AppModule_ProvideCalligraphyDefaultConfig$app_devDebugFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.AppModule_ProvideContextFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.AppModule_ProvideLayoutManager$app_devDebugFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.AppModule_ProvideSchedulerProvider$app_devDebugFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.AppModule_ProvideValidator$app_devDebugFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.DatabaseModule_ProvideDatabaseFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.NetworkModule_ApiFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.NetworkModule_ApiFileFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.NetworkModule_OkHttpFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.NetworkModule_RequestInterceptorFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.NetworkModule_ResponseInterceptorFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.NetworkModule_RetrofitFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.NetworkModule_RetrofitFileFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.PrefModule_ProvidesPrefSourceFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace di.module {
+      class id.co.iconpln.smartcity.di.module.RepositoryModule_ProvideUserRepositoryFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.dashboard {
+      class id.co.iconpln.smartcity.ui.dashboard.DashboardActivity_MembersInjector {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.kota {
+      class id.co.iconpln.smartcity.ui.kota.KotaActivityModule_ProvideKotaAdapterFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.kota {
+      class id.co.iconpln.smartcity.ui.kota.KotaActivityModule_ProvideKotaPresenterFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.kota {
+      class id.co.iconpln.smartcity.ui.kota.KotaActivity_MembersInjector {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.kota {
+      class id.co.iconpln.smartcity.ui.kota.KotaPresenterImpl_Factory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.login {
+      class id.co.iconpln.smartcity.ui.login.LoginActivityModule_ProvideLoginPresenterFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.login {
+      class id.co.iconpln.smartcity.ui.login.LoginActivity_MembersInjector {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.login {
+      class id.co.iconpln.smartcity.ui.login.LoginPresenterImp_Factory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.provinsi {
+      class id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivityModule_ProvideProvinsiAdapterFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.provinsi {
+      class id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivityModule_ProvideProvinsiPresenterFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.provinsi {
+      class id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivity_MembersInjector {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.provinsi {
+      class id.co.iconpln.smartcity.ui.provinsi.ProvinsiPresenterImpl_Factory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.publicservices {
+      class id.co.iconpln.smartcity.ui.publicservices.PublicServiceImpl_Factory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.publicservices {
+      class id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule_ProvideJPengaduanPresenterFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.publicservices {
+      class id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule_ProvidePengaduanPresenterFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.publicservices {
+      class id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule_ProvidePublicServiceFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.publicservices {
+      class id.co.iconpln.smartcity.ui.publicservices.PublicServicesFragment_MembersInjector {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.publicservices {
+      namespace jenispengaduan {
+        class id.co.iconpln.smartcity.ui.publicservices.jenispengaduan.JPengaduanImpl_Factory {
+        }
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.publicservices {
+      namespace jenispengaduan {
+        class id.co.iconpln.smartcity.ui.publicservices.jenispengaduan.JenisPengaduanFragment_MembersInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.publicservices {
+      namespace pengaduan {
+        class id.co.iconpln.smartcity.ui.publicservices.pengaduan.DataPengaduanFragment_MembersInjector {
+        }
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.publicservices {
+      namespace pengaduan {
+        class id.co.iconpln.smartcity.ui.publicservices.pengaduan.PengaduanPresenterImpl_Factory {
+        }
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.splash {
+      class id.co.iconpln.smartcity.ui.splash.SplashActivityModule_ProvideSplashPresenterFactory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace ui.splash {
+      class id.co.iconpln.smartcity.ui.splash.SplashPresenterImp_Factory {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace util {
+      class id.co.iconpln.smartcity.util.ColorTempl {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace util {
+      class id.co.iconpln.smartcity.util.ValidatorUtils {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace widget {
+      class id.co.iconpln.smartcity.widget.CustomValueFormatter {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace widget {
+      class id.co.iconpln.smartcity.widget.SnackbarManager {
+      }
+    }
+  }
+  
+
+  namespace id.co.iconpln.smartcity {
+    namespace widget {
+      class id.co.iconpln.smartcity.widget.TopSnackbar {
+      }
+    }
+  }
+  
+
+  id.co.iconpln.insidal.network.RequestInterceptor_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.insidal.network.ResponseInterceptor_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.AppController_MembersInjector .up.|> dagger.MembersInjector
+  id.co.iconpln.smartcity.data.repository.UserRepository_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.data.source.db.AppDatabaseSource_Impl -up-|> id.co.iconpln.smartcity.data.source.db.AppDatabaseSource
+  id.co.iconpln.smartcity.data.source.db.AppDatabaseSource_Impl o-- id.co.iconpln.smartcity.data.source.db.dao.ContactDao : _contactDao
+  id.co.iconpln.smartcity.data.source.db.dao.ContactDao_Impl -up-|> id.co.iconpln.smartcity.data.source.db.dao.ContactDao
+  id.co.iconpln.smartcity.data.source.remote.AppRemoteFileSource_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.data.source.remote.AppRemoteSource_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.component.DaggerAppComponent .up.|> id.co.iconpln.smartcity.di.component.AppComponent
+  id.co.iconpln.smartcity.di.component.DaggerAppComponent o-- id.co.iconpln.smartcity.di.module.AppModule : appModule
+  id.co.iconpln.smartcity.di.component.DaggerAppComponent o-- id.co.iconpln.smartcity.di.module.AppModule_ProvideContextFactory : provideContextProvider
+  id.co.iconpln.smartcity.di.component.DaggerAppComponent o-- id.co.iconpln.smartcity.di.module.RepositoryModule : repositoryModule
+  id.co.iconpln.smartcity.di.component.DaggerAppComponent o-- id.co.iconpln.insidal.network.ResponseInterceptor_Factory : responseInterceptorProvider
+  id.co.iconpln.smartcity.di.module.AppModule_ProvideCalligraphyDefaultConfig$app_devDebugFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.AppModule_ProvideCalligraphyDefaultConfig$app_devDebugFactory o-- id.co.iconpln.smartcity.di.module.AppModule : module
+  id.co.iconpln.smartcity.di.module.AppModule_ProvideContextFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.AppModule_ProvideContextFactory o-- id.co.iconpln.smartcity.di.module.AppModule : module
+  id.co.iconpln.smartcity.di.module.AppModule_ProvideLayoutManager$app_devDebugFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.AppModule_ProvideLayoutManager$app_devDebugFactory o-- id.co.iconpln.smartcity.di.module.AppModule : module
+  id.co.iconpln.smartcity.di.module.AppModule_ProvideSchedulerProvider$app_devDebugFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.AppModule_ProvideSchedulerProvider$app_devDebugFactory o-- id.co.iconpln.smartcity.di.module.AppModule : module
+  id.co.iconpln.smartcity.di.module.AppModule_ProvideValidator$app_devDebugFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.AppModule_ProvideValidator$app_devDebugFactory o-- id.co.iconpln.smartcity.di.module.AppModule : module
+  id.co.iconpln.smartcity.di.module.DatabaseModule_ProvideDatabaseFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.DatabaseModule_ProvideDatabaseFactory o-- id.co.iconpln.smartcity.di.module.DatabaseModule : module
+  id.co.iconpln.smartcity.di.module.NetworkModule_ApiFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.NetworkModule_ApiFactory o-- id.co.iconpln.smartcity.di.module.NetworkModule : module
+  id.co.iconpln.smartcity.di.module.NetworkModule_ApiFileFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.NetworkModule_ApiFileFactory o-- id.co.iconpln.smartcity.di.module.NetworkModule : module
+  id.co.iconpln.smartcity.di.module.NetworkModule_OkHttpFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.NetworkModule_OkHttpFactory o-- id.co.iconpln.smartcity.di.module.NetworkModule : module
+  id.co.iconpln.smartcity.di.module.NetworkModule_RequestInterceptorFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.NetworkModule_RequestInterceptorFactory o-- id.co.iconpln.smartcity.di.module.NetworkModule : module
+  id.co.iconpln.smartcity.di.module.NetworkModule_ResponseInterceptorFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.NetworkModule_ResponseInterceptorFactory o-- id.co.iconpln.smartcity.di.module.NetworkModule : module
+  id.co.iconpln.smartcity.di.module.NetworkModule_RetrofitFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.NetworkModule_RetrofitFactory o-- id.co.iconpln.smartcity.di.module.NetworkModule : module
+  id.co.iconpln.smartcity.di.module.NetworkModule_RetrofitFileFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.NetworkModule_RetrofitFileFactory o-- id.co.iconpln.smartcity.di.module.NetworkModule : module
+  id.co.iconpln.smartcity.di.module.PrefModule_ProvidesPrefSourceFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.PrefModule_ProvidesPrefSourceFactory o-- id.co.iconpln.smartcity.di.module.PrefModule : module
+  id.co.iconpln.smartcity.di.module.RepositoryModule_ProvideUserRepositoryFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.di.module.RepositoryModule_ProvideUserRepositoryFactory o-- id.co.iconpln.smartcity.di.module.RepositoryModule : module
+  id.co.iconpln.smartcity.ui.dashboard.DashboardActivity_MembersInjector .up.|> dagger.MembersInjector
+  id.co.iconpln.smartcity.ui.kota.KotaActivityModule_ProvideKotaAdapterFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.kota.KotaActivityModule_ProvideKotaAdapterFactory o-- id.co.iconpln.smartcity.ui.kota.KotaActivityModule : module
+  id.co.iconpln.smartcity.ui.kota.KotaActivityModule_ProvideKotaPresenterFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.kota.KotaActivityModule_ProvideKotaPresenterFactory o-- id.co.iconpln.smartcity.ui.kota.KotaActivityModule : module
+  id.co.iconpln.smartcity.ui.kota.KotaActivity_MembersInjector .up.|> dagger.MembersInjector
+  id.co.iconpln.smartcity.ui.kota.KotaPresenterImpl_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.login.LoginActivityModule_ProvideLoginPresenterFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.login.LoginActivityModule_ProvideLoginPresenterFactory o-- id.co.iconpln.smartcity.ui.login.LoginActivityModule : module
+  id.co.iconpln.smartcity.ui.login.LoginActivity_MembersInjector .up.|> dagger.MembersInjector
+  id.co.iconpln.smartcity.ui.login.LoginPresenterImp_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivityModule_ProvideProvinsiAdapterFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivityModule_ProvideProvinsiAdapterFactory o-- id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivityModule : module
+  id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivityModule_ProvideProvinsiPresenterFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivityModule_ProvideProvinsiPresenterFactory o-- id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivityModule : module
+  id.co.iconpln.smartcity.ui.provinsi.ProvinsiActivity_MembersInjector .up.|> dagger.MembersInjector
+  id.co.iconpln.smartcity.ui.provinsi.ProvinsiPresenterImpl_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.publicservices.PublicServiceImpl_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule_ProvideJPengaduanPresenterFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule_ProvideJPengaduanPresenterFactory o-- id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule : module
+  id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule_ProvidePengaduanPresenterFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule_ProvidePengaduanPresenterFactory o-- id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule : module
+  id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule_ProvidePublicServiceFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule_ProvidePublicServiceFactory o-- id.co.iconpln.smartcity.ui.publicservices.PublicServiceModule : module
+  id.co.iconpln.smartcity.ui.publicservices.PublicServicesFragment_MembersInjector .up.|> dagger.MembersInjector
+  id.co.iconpln.smartcity.ui.publicservices.jenispengaduan.JPengaduanImpl_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.publicservices.jenispengaduan.JenisPengaduanFragment_MembersInjector .up.|> dagger.MembersInjector
+  id.co.iconpln.smartcity.ui.publicservices.pengaduan.DataPengaduanFragment_MembersInjector .up.|> dagger.MembersInjector
+  id.co.iconpln.smartcity.ui.publicservices.pengaduan.PengaduanPresenterImpl_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.splash.SplashActivityModule_ProvideSplashPresenterFactory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.ui.splash.SplashActivityModule_ProvideSplashPresenterFactory o-- id.co.iconpln.smartcity.ui.splash.SplashActivityModule : module
+  id.co.iconpln.smartcity.ui.splash.SplashPresenterImp_Factory .up.|> dagger.internal.Factory
+  id.co.iconpln.smartcity.util.ValidatorUtils o-- id.co.iconpln.smartcity.util.ValidatorUtils.OnValidationListener : onValidationListener
+  id.co.iconpln.smartcity.widget.CustomValueFormatter .up.|> com.github.mikephil.charting.utils.ValueFormatter
+  id.co.iconpln.smartcity.widget.SnackbarManager o-- id.co.iconpln.smartcity.widget.SnackbarManager.SnackbarRecord : mCurrentSnackbar
+  id.co.iconpln.smartcity.widget.SnackbarManager o-- id.co.iconpln.smartcity.widget.SnackbarManager.SnackbarRecord : mNextSnackbar
+  id.co.iconpln.smartcity.widget.TopSnackbar o-- id.co.iconpln.smartcity.widget.TopSnackbar.Callback : mCallback
+  id.co.iconpln.smartcity.widget.TopSnackbar o-- id.co.iconpln.smartcity.widget.SnackbarManager.Callback : mManagerCallback
+  id.co.iconpln.smartcity.widget.TopSnackbar o-- id.co.iconpln.smartcity.widget.TopSnackbar.SnackbarLayout : mView
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

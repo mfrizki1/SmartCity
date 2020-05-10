@@ -6,19 +6,33 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.android.AndroidInjection
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.support.HasSupportFragmentInjector
 import id.co.iconpln.smartcity.R
+import id.co.iconpln.smartcity.ui.base.BaseActivity
 import id.co.iconpln.smartcity.ui.ekonomi.EkonomiFragment
 import id.co.iconpln.smartcity.ui.publicservices.PublicServicesFragment
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.layout_toolbar_white.*
+import javax.inject.Inject
 
-class DashboardActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+class DashboardActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener,
+    HasSupportFragmentInjector {
 
     lateinit var Bottom_menu: BottomNavigationView
 
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = intent.getStringExtra("NAME_CITY")
 
         Bottom_menu = findViewById(R.id.Bottom_menu)
         Bottom_menu.setOnNavigationItemSelectedListener(this)
@@ -27,8 +41,6 @@ class DashboardActivity : AppCompatActivity(), BottomNavigationView.OnNavigation
             Bottom_menu.setSelectedItemId(R.id.nav_home)
         }
 
-        setSupportActionBar(toolbar)
-//        supportActionBar?.title =
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -49,6 +61,8 @@ class DashboardActivity : AppCompatActivity(), BottomNavigationView.OnNavigation
         }
         return loadFragment(fragment)
     }
+
+    override fun supportFragmentInjector(): AndroidInjector<Fragment> = dispatchingAndroidInjector
 
     private fun loadFragment(fragment: Fragment?): Boolean{
         if (fragment != null){
