@@ -64,7 +64,7 @@ class PenPajakFragment : Fragment() {
         set1.setCircleColor(Color.rgb(66, 165, 245))
         set1.lineWidth = 1f
         set1.setDrawCircleHole(false)
-        set1.valueTextSize = 4f
+        set1.valueTextSize = 10f
         set1.setDrawFilled(true)
 
         val dataSet = ArrayList<LineDataSet>()

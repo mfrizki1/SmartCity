@@ -86,18 +86,18 @@ class DataApbdFragment : Fragment(), OnChartValueSelectedListener {
         belum.add(BarEntry(-359.4f, 3))
 
         val barDataSet1 = BarDataSet(total, "Total Anggaran")
-        barDataSet1.setColor(Color.rgb(0, 155, 0))
+        barDataSet1.setColor(Color.rgb(204, 232, 255))
         barDataSet1.valueTextSize = 7f
         barDataSet1.valueFormatter = DataValueFormatter
 
         val barDataSet2 = BarDataSet(realisasi, "Realisasi Anggaran")
-        barDataSet2.setColor(Color.rgb(0, 0, 155))
+        barDataSet2.setColor(Color.rgb(255, 204, 204))
         barDataSet2.valueTextSize = 7f
         barDataSet2.valueFormatter = DataValueFormatter
 
 
         val barDataSet3 = BarDataSet(belum, "Belum Realisasi")
-        barDataSet3.setColor(Color.rgb(155, 0, 0))
+        barDataSet3.setColor(Color.rgb(190, 183, 255))
         barDataSet3.valueTextSize = 7f
         barDataSet3.valueFormatter = DataValueFormatter
 

@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.orhanobut.hawk.Hawk
 import id.co.iconpln.smartcity.R
 import id.co.iconpln.smartcity.data.model.api.response.Province
 import id.co.iconpln.smartcity.data.model.local.ProvinceDto
@@ -68,6 +69,9 @@ class ProvinsiActivity : BaseActivity(), RecyclerViewItemClickListener<ProvinceD
             val intent  = Intent(this, KotaActivity::class.java)
             intent.putExtra(GET_ID_PROV, item.id)
             intent.putExtra(GET_NAME_PROV, item.name)
+
+            //using hawk
+            val prov_name= Hawk.put("prov_name", item.name)
             startActivity(intent)
         }
     }

@@ -56,22 +56,155 @@
 
             <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginTop="12dp"
                     android:background="@drawable/bg_summary">
 
-                <RelativeLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                     <ImageView
+                            android:id="@+id/img_pengaduan"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            />
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_pengaduan" />
 
-                </RelativeLayout>
+                    <TextView
+                            android:id="@+id/txt_tot_peng"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Total Pengaduan"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/img_pengaduan"
+                            app:layout_constraintStart_toEndOf="@+id/img_pengaduan"
+                            app:layout_constraintTop_toTopOf="@+id/img_pengaduan" />
+
+                    <TextView
+                            android:id="@+id/txt_sum_peng"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="24dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="541"
+                            android:textColor="@color/onyx"
+                            android:textSize="28sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/img_pengaduan" />
+
+                    <View
+                            android:id="@+id/view"
+                            android:layout_width="0.5dp"
+                            android:layout_height="75dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:background="@color/onyx"
+                            app:layout_constraintBottom_toBottomOf="@+id/txt_sum_peng"
+                            app:layout_constraintStart_toEndOf="@+id/txt_sum_peng"
+                            app:layout_constraintTop_toTopOf="@+id/txt_sum_peng" />
+
+                    <TextView
+                            android:id="@+id/value_proses"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="521"
+                            android:textSize="@dimen/text_12"
+                            android:textColor="@color/onyx"
+                            app:layout_constraintBottom_toTopOf="@+id/value_selesai"
+                            app:layout_constraintStart_toEndOf="@+id/view"
+                            app:layout_constraintTop_toBottomOf="@+id/value_baru" />
+
+                    <TextView
+                            android:id="@+id/value_baru"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="112"
+                            android:textSize="@dimen/text_12"
+                            android:textColor="@color/onyx"
+                            app:layout_constraintBottom_toTopOf="@+id/value_proses"
+                            app:layout_constraintStart_toEndOf="@+id/view"
+                            app:layout_constraintTop_toTopOf="@+id/view" />
+
+                    <TextView
+                            android:id="@+id/value_selesai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="121"
+                            android:textSize="@dimen/text_12"
+                            android:textColor="@color/onyx"
+                            app:layout_constraintBottom_toBottomOf="@+id/view"
+                            app:layout_constraintStart_toStartOf="@id/view" />
+
+                    <TextView
+                            android:id="@+id/txt_baru"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Baru"
+                            android:textColor="@color/onyx"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/value_baru"
+                            app:layout_constraintStart_toEndOf="@+id/value_baru"
+                            app:layout_constraintTop_toTopOf="@+id/value_baru" />
+
+                    <TextView
+                            android:id="@+id/txt_proses"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Proses"
+                            android:textColor="@color/onyx"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/value_proses"
+                            app:layout_constraintStart_toEndOf="@+id/value_proses"
+                            app:layout_constraintTop_toTopOf="@+id/value_proses" />
+
+                    <TextView
+                            android:id="@+id/txt_selesai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Selesai"
+                            android:textColor="@color/onyx"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/value_selesai"
+                            app:layout_constraintStart_toEndOf="@+id/value_selesai"
+                            app:layout_constraintTop_toTopOf="@+id/value_selesai"
+                            tools:ignore="MissingConstraints" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </LinearLayout>
 
@@ -81,7 +214,123 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_summary"/>
+                    android:background="@drawable/bg_summary">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:id="@+id/img_penduduk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_penduduk" />
+
+                    <TextView
+                            android:id="@+id/txt_jum_pend"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Jumlah Penduduk"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/img_penduduk"
+                            app:layout_constraintStart_toEndOf="@+id/img_penduduk"
+                            app:layout_constraintTop_toTopOf="@+id/img_penduduk" />
+
+                    <TextView
+                            android:id="@+id/txt_sum_pend"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="24dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="1024"
+                            android:textColor="@color/onyx"
+                            android:textSize="28sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/img_penduduk" />
+
+                    <View
+                            android:id="@+id/view1"
+                            android:layout_width="0.5dp"
+                            android:layout_height="75dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:background="@color/onyx"
+                            app:layout_constraintBottom_toBottomOf="@+id/txt_sum_pend"
+                            app:layout_constraintStart_toEndOf="@+id/txt_sum_pend"
+                            app:layout_constraintTop_toTopOf="@+id/txt_sum_pend" />
+
+                    <TextView
+                            android:id="@+id/value_pria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="521"
+                            android:textColor="@color/onyx"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/view1"
+                            app:layout_constraintStart_toEndOf="@+id/view1"
+                            app:layout_constraintTop_toBottomOf="@+id/value_cewe" />
+
+                    <TextView
+                            android:id="@+id/value_cewe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="112"
+                            android:textColor="@color/onyx"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintStart_toEndOf="@+id/view1"
+                            app:layout_constraintTop_toTopOf="@+id/view1" />
+
+                    <TextView
+                            android:id="@+id/txt_pria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Pria"
+                            android:textColor="@color/onyx"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/value_cewe"
+                            app:layout_constraintStart_toEndOf="@+id/value_cewe"
+                            app:layout_constraintTop_toTopOf="@+id/value_cewe" />
+
+                    <TextView
+                            android:id="@+id/txt_cewe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Perempuan"
+                            android:textColor="@color/onyx"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/value_pria"
+                            app:layout_constraintStart_toEndOf="@+id/value_pria"
+                            app:layout_constraintTop_toTopOf="@+id/value_pria" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
 
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -89,7 +338,152 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_summary"/>
+                    android:background="@drawable/bg_summary">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:id="@+id/img_perijinan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_perijinan" />
+
+                    <TextView
+                            android:id="@+id/txt_tot_peri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Total Perijinan"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/img_perijinan"
+                            app:layout_constraintStart_toEndOf="@+id/img_perijinan"
+                            app:layout_constraintTop_toTopOf="@+id/img_perijinan" />
+
+                    <TextView
+                            android:id="@+id/txt_sum_peri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="24dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="541"
+                            android:textColor="@color/onyx"
+                            android:textSize="28sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/img_perijinan" />
+
+                    <View
+                            android:id="@+id/view2"
+                            android:layout_width="0.5dp"
+                            android:layout_height="75dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:background="@color/onyx"
+                            app:layout_constraintBottom_toBottomOf="@+id/txt_sum_peri"
+                            app:layout_constraintStart_toEndOf="@+id/txt_sum_peri"
+                            app:layout_constraintTop_toTopOf="@+id/txt_sum_peri" />
+
+                    <TextView
+                            android:id="@+id/value_proses_peri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="521"
+                            android:textSize="@dimen/text_12"
+                            android:textColor="@color/onyx"
+                            app:layout_constraintBottom_toTopOf="@+id/value_selesai_peri"
+                            app:layout_constraintStart_toEndOf="@+id/view2"
+                            app:layout_constraintTop_toBottomOf="@+id/value_baru_peri" />
+
+                    <TextView
+                            android:id="@+id/value_baru_peri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="112"
+                            android:textSize="@dimen/text_12"
+                            android:textColor="@color/onyx"
+                            app:layout_constraintBottom_toTopOf="@+id/value_proses_peri"
+                            app:layout_constraintStart_toEndOf="@+id/view2"
+                            app:layout_constraintTop_toTopOf="@+id/view2" />
+
+                    <TextView
+                            android:id="@+id/value_selesai_peri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="121"
+                            android:textSize="@dimen/text_12"
+                            android:textColor="@color/onyx"
+                            app:layout_constraintBottom_toBottomOf="@+id/view2"
+                            app:layout_constraintStart_toStartOf="@id/view2" />
+
+                    <TextView
+                            android:id="@+id/txt_baru_peri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Baru"
+                            android:textColor="@color/onyx"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/value_baru_peri"
+                            app:layout_constraintStart_toEndOf="@+id/value_baru_peri"
+                            app:layout_constraintTop_toTopOf="@+id/value_baru_peri" />
+
+                    <TextView
+                            android:id="@+id/txt_proses_peri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Proses"
+                            android:textColor="@color/onyx"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/value_proses_peri"
+                            app:layout_constraintStart_toEndOf="@+id/value_proses_peri"
+                            app:layout_constraintTop_toTopOf="@+id/value_proses_peri" />
+
+                    <TextView
+                            android:id="@+id/txt_selesai_peri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Selesai"
+                            android:textColor="@color/onyx"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/value_selesai_peri"
+                            app:layout_constraintStart_toEndOf="@+id/value_selesai_peri"
+                            app:layout_constraintTop_toTopOf="@+id/value_selesai_peri"
+                            tools:ignore="MissingConstraints" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
 
         </LinearLayout>
     </HorizontalScrollView>

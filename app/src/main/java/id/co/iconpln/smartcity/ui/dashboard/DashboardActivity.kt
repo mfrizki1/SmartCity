@@ -11,6 +11,7 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import id.co.iconpln.smartcity.R
+import id.co.iconpln.smartcity.ui.account.AccountFragment
 import id.co.iconpln.smartcity.ui.base.BaseActivity
 import id.co.iconpln.smartcity.ui.ekonomi.EkonomiFragment
 import id.co.iconpln.smartcity.ui.publicservices.PublicServicesFragment
@@ -57,7 +58,9 @@ class DashboardActivity : AppCompatActivity(), BottomNavigationView.OnNavigation
             R.id.nav_ekonomi -> {
                 fragment = EkonomiFragment()
             }
-//            R.id.nav_account -> fragment = AccountFragment()
+            R.id.nav_account ->{
+                fragment = AccountFragment()
+            }
         }
         return loadFragment(fragment)
     }
