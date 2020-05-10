@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.orhanobut.hawk.Hawk
 import id.co.iconpln.smartcity.R
 import id.co.iconpln.smartcity.data.model.local.CityDto
 import id.co.iconpln.smartcity.ui.base.BaseActivity
@@ -63,7 +64,12 @@ class KotaActivity : BaseActivity(), RecyclerViewItemClickListener<CityDto>, Kot
             val intent = Intent(applicationContext, LoginActivity::class.java)
             intent.putExtra(GET_ID_CITY, item.id)
             intent.putExtra("CITY_NAME", item.name)
+
+            //using hawk
+            val city_name = Hawk.put("city_name", item.name)
             startActivity(intent)
+
+
 
 
 //            intent.putExtra(GET_NAME_CITY, item.name)

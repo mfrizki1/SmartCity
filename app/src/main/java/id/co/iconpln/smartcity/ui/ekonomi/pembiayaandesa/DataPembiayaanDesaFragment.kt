@@ -105,18 +105,18 @@ class DataPembiayaanDesaFragment : Fragment() {
         rapker.add(BarEntry(30f, 11))
 
         val barDataSet1 = BarDataSet(gajidesa, "Gaji Perangkat Desa")
-        barDataSet1.setColor(Color.rgb(0, 155, 0))
+        barDataSet1.setColor(Color.rgb(204, 232, 255))
         barDataSet1.valueTextSize = 7f
         barDataSet1.valueFormatter = DataValueFormatter
 
         val barDataSet2 = BarDataSet(infrastruktur, "Pemeliharaan Infrasturktur")
-        barDataSet2.setColor(Color.rgb(0, 0, 155))
+        barDataSet2.setColor(Color.rgb(255, 204, 204))
         barDataSet2.valueTextSize = 7f
         barDataSet2.valueFormatter = DataValueFormatter
 
 
         val barDataSet3 = BarDataSet(rapker, "Rapat Kerja")
-        barDataSet3.setColor(Color.rgb(155, 0, 0))
+        barDataSet3.setColor(Color.rgb(190, 183, 255))
         barDataSet3.valueTextSize = 7f
         barDataSet3.valueFormatter = DataValueFormatter
 

@@ -39,7 +39,6 @@ class DashboardFragment : BaseFragment() {
         adapter.populateFragment(JumPengaduanFragment(), "Jumlah Pengaduan")
         adapter.populateFragment(AnggaranAPBDFragment(), "Penyerapan Anggaran APBD")
         adapter.populateFragment(PenPajakFragment(), "Pendapatan Pajak")
-        adapter.populateFragment(DataKesehatanFragment(), "Dana Kesehatan")
         viewPager.adapter = adapter
         tabDashboard.setupWithViewPager(viewPager)
     }
