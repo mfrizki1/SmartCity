@@ -1,6 +1,8 @@
 # SmartCity
 
+Projek Magang ICON+
 Aplikasi Monitoring Data Pengaduan, Perizinan, Demograpi Antar Kota
+
 
 ![alt text](pengaduan.jpg)
 
